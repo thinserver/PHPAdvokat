@@ -1,0 +1,52 @@
+\documentclass[12pt,german]{g-brief}
+\usepackage[latin1]{inputenc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%  Daten zur eigenen Person   %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\fenstermarken
+\faltmarken
+\trennlinien
+\Name                {$CFG_ORGANIZATION}
+\Strasse             {$CFG_STREET}
+\Ort                 {$CFG_ZIP $CFG_CITY}
+\Telefon             {$CFG_PHONE}
+\Telefax             {$CFG_FAX}
+\HTTP                {}
+\EMail               {$CFG_EMAIL}
+
+\Bank                {$CFG_BANK}
+\BLZ                 {$CFG_BANK_ID}
+\Konto               {$CFG_ACCOUNT}
+
+\Unterschrift        {$CFG_PRENAME $CFG_NAME}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%  Daten des jeweiligen Briefes, müssen jedesmal geändert werden  %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\Postvermerk         {}                   % Einschreiben, etc.
+\Adresse             {An $ADR_ORGANIZATION\\
+                      $ADR_PRENAME $ADR_NAME\\
+                      $ADR_STREET\\
+                      $ADR_ZIP $ADR_CITY
+                     }
+\Betreff             {In Sachen $SUBJECT}
+\Datum               {\today}
+\Anrede              {$OPENING,}
+\Gruss               {Mit freundlichen Grüßen}{1cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%  der eigentliche Text des Briefes  %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\begin{g-brief}
+
+hiermit teile ich Ihnen mit, dass ich absofort die Vertretung des o.g. 
+Mandanten übernehme.
+
+\end{g-brief}
+\end{document}
+

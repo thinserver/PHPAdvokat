@@ -1,0 +1,85 @@
+\def\filedate{2003/05/08}
+\def\fileversion{4.0.1}
+
+\documentclass[11pt,ngerman,latin9]{g-brief2}
+
+\lochermarke
+\faltmarken
+\fenstermarken
+\trennlinien
+%% \unserzeichen
+
+\Name                {$CFG_ORGANIZATION}
+
+\NameZeileA          {{\bf $CFG_PRENAME $CFG_NAME}}
+\NameZeileB          {}
+\NameZeileC          {}
+\NameZeileD          {}
+\NameZeileE          {}
+\NameZeileF          {}
+\NameZeileG          {}
+
+\AdressZeileA        {$CFG_STREET}
+\AdressZeileB        {$CFG_ZIP $CFG_CITY}
+\AdressZeileC        {}
+\AdressZeileD        {}
+\AdressZeileE        {}
+\AdressZeileF        {}
+
+\TelefonZeileA       {Tel.: $CFG_PHONE}
+\TelefonZeileB       {Fax:  $CFG_FAX}
+\TelefonZeileC       {}
+\TelefonZeileD       {}
+\TelefonZeileE       {}
+\TelefonZeileF       {}
+
+\InternetZeileA      {$CFG_EMAIL}
+\InternetZeileB      {}
+\InternetZeileC      {}
+\InternetZeileD      {}
+\InternetZeileE      {}
+\InternetZeileF      {}
+
+\BankZeileA          {$CFG_BANK}
+\BankZeileB          {BLZ: $CFG_BANK_ID}
+\BankZeileC          {Konto: $CFG_ACCOUNT}
+\BankZeileD          {Ust. Nr.: $CFG_VAT_ID}
+\BankZeileE          {}
+\BankZeileF          {}
+
+\RetourAdresse       {$CFG_ORGANIZATION $\cdot$ $CFG_STREET
+                      $\cdot$ $CFG_ZIP $CFG_CITY}
+\Postvermerk         {}
+\Adresse             {An $ADR_ORGANIZATION\\
+                      $ADR_PRENAME $ADR_NAME\\
+                      $ADR_STREET\\
+                      \\
+                      {\bf $ADR_ZIP $ADR_CITY}
+                      }
+
+\Betreff             {In Sachen $SUBJECT}
+
+\Datum               {\today}
+\IhrZeichen          {}
+\IhrSchreiben        {}
+\MeinZeichen         {}
+
+\Anrede              {$OPENING,}
+\Gruss               {Mit freundlichen Gr\"u\ss{}en}{1cm}
+\Unterschrift        {$CFG_PRENAME $CFG_NAME}
+
+\Anlagen             {}
+\Verteiler           {}
+
+\begin{document}
+\begin{g-brief}
+
+hiermit teile ich Ihnen mit, dass ich ab sofort die Vertretung 
+des o.g. Mandanten uebernehme.
+
+\end{g-brief}
+\end{document}
+
+
+\endinput
+%%

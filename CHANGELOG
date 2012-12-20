@@ -1,0 +1,151 @@
+Version 0.8-6
+-----------
+2012-11-30
+Burkhard Obergoeker
+using CSS to give phpadvocat a new look
+removing a bug in the calendaredit.php which makes it impossible to
+enter events after year 2010
+
+Version 0.8-5
+-----------
+2012-10-15
+Burkhard Obergoeker
+removing a bug in the pfiles.php which makes it impossible to
+enter events after year 2010
+
+Version 0.8-4
+-----------
+2009-10-09
+Burkhard Obergoeker
+Set default Charset of PostgreSQL to LATIN9
+eleminated a bug in ms-createdb.sql. Thanks to kereslas!
+
+Version 0.8-3
+-----------
+2007-01-13
+Burkhard Obergoeker
+Modified Kontenrahmen for 16% tax in Germany
+
+Version 0.8-2
+-----------
+2006-01-12
+Burkhard Obergoeker
+Calender design reconfigured
+
+
+Version 0.8-1
+-----------
+2006-01-12
+Burkhard Obergoeker
+Reconfigured Data model
+added accounts and modified categories 
+
+
+Version 0.8-0
+-----------
+2005-12-08
+Burkhard Obergoeker
+Badly dead end for database model
+skipped!! (sorry)
+
+
+Version 0.7-3
+-----------
+2005-09-14
+Burkhard Obergoeker
+Changed invoiceedit pay logic to split the expend records into separate
+tax percentages. Each record will create a record in the tax bookkeeping
+table except the taxrate is 0%.
+
+Version 0.7-2
+-----------
+2005-07-03
+Burkhard Obergoeker
+Added online documentation
+
+Version 0.7-1
+-----------
+Burkhard Obergoeker
+Set invoice vat with option list, not checkbox
+Optical display total amount with 2 decimals
+fixed a major security hole in file access
+
+Version 0.7
+-----------
+Burkhard Obergoeker
+redesigned the bookkeeping module 
+changed the data model for bookeeping amounts
+
+Version 0.6
+-----------
+2005-05-25
+Burkhard Obergoeker
+added a bookkeeping module 
+changed the data model for extended expends
+competed the statistics page
+
+Version 0.5-1
+-----------
+2005-04-22
+Burkhard Obergoeker
+change data format depending on a global $LOCALE var
+correct sql statements to be compatible to MySQL
+create a MySQL create script
+
+Version 0.5
+-----------
+2005-04-15
+Burkhard Obergoeker
+rename all tables adding prefix "phpa_"
+automatism to pay invoices an add the amount to expenditures.
+small statistics page
+open invoice list
+
+Version 0.4-2
+-----------
+2005-04-01
+Burkhard Obergoeker
+redesign of Document (data files) creation
+using LaTeX 
+
+Version 0.4-1
+-----------
+Burkhard Obergoeker
+added a MySQL module (not yet tested)
+completed pdf-invoice generation
+filter for old files in list
+
+Version 0.4
+-----------
+Burkhard Obergoeker
+added pdf output for printing invoices
+based on fpdf by Olivier PLATHEY
+added a central config table and an 
+administration dialog
+
+Version 0.3-1
+-----------
+2005-02-08
+Burkhard Obergoeker
+added expenditures
+redesign of dialog
+display amount of every pfile
+create a processregister for every pfile
+
+Version 0.3
+-----------
+Burkhard Obergoeker
+added event manager with calendar function based on
+calendrier.php by Mathieu LESNIAK
+
+Version 0.2
+-----------
+2005-01-22
+Burkhard Obergoeker
+added invoice manager
+
+Version 0.1
+-----------
+2005-01-05
+Burkhard Obergoeker
+- initial version

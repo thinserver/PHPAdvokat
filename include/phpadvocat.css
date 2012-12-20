@@ -1,0 +1,42 @@
+hr {color:blue;}
+p {margin-left:20px;}
+
+/*body {background-image:url("images/back40.gif");} */
+body {background-color:#f0f0ff;} 
+
+.listtable td
+{
+border: 1px solid black;
+border-collapse:collapse;
+}
+
+.inputtable tr
+{
+border: 1px solid black;
+border-collapse:collapse;
+}
+
+
+/*
+table.listtable, tbody.listtable, th.listtable, td.listtable
+{
+border: 1px solid black;
+border-collapse:collapse;
+}
+*/
+
+table.inputtable, table.listtable
+{
+border: 1px solid black;
+border-collapse:collapse;
+}
+
+table.listtable
+{
+width: 90%;
+}
+
+.input
+{
+background-color:#a0a0aa;
+}

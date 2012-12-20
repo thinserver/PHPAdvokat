@@ -1,0 +1,227 @@
+KONTENRAHMEN
+Sachkonten Typ: SKR04
+Mandant: , Buchhaltung: name07
+
+KtoNr;Kontobezeichnung;UVA-Code;Mwst-Konto;Mwst-%Satz;im Papierkorb;Einnahme/Ausgabe;KennzahlBWA-Code;EÜR-Kategorie;EÜR-Kategoriebezeichnung
+
+  110 ;Konzessionen                                      ;     0 ;    0 ;    0;;      ;    0 ;    0 ; 9999 ;nicht EÜR-relevant
+  135 ;EDV Software                                      ;     0 ; 1406 ;    0;;      ;    0 ;    0 ; 9999 ;nicht EÜR-relevant
+  150 ;Geschäfts- oder Firmenwert                        ;     0 ;    0 ;    0;;      ;    0 ;    0 ; 9999 ;nicht EÜR-relevant
+  200 ;Grundstücke, Gebäude                              ;     0 ; 1406 ;    0;;      ;    0 ;    0 ; 9999 ;nicht EÜR-relevant
+  250 ;Fabrikbauten                                      ;     0 ; 1406 ;    0;;      ;    0 ;    0 ; 9999 ;nicht EÜR-relevant
+  260 ;Andere Bauten                                     ;     0 ; 1406 ;    0;;      ;    0 ;    0 ; 9999 ;nicht EÜR-relevant
+  440 ;Maschinen                                         ;     0 ; 1406 ;    0;;      ;    0 ;    0 ; 9999 ;nicht EÜR-relevant
+  500 ;Betriebs- u. Geschäftsausstattung                 ;     0 ; 1406 ;    0;;      ;    0 ;    0 ; 9999 ;nicht EÜR-relevant
+  520 ;Pkw                                               ;     0 ; 1406 ;    0;;      ;    0 ;    0 ; 9999 ;nicht EÜR-relevant
+  540 ;Lkw                                               ;     0 ; 1406 ;    0;;      ;    0 ;    0 ; 9999 ;nicht EÜR-relevant
+  620 ;Werkzeuge                                         ;     0 ; 1406 ;    0;;      ;    0 ;    0 ; 9999 ;nicht EÜR-relevant
+  640 ;Ladeneinrichtung                                  ;     0 ; 1406 ;    0;;      ;    0 ;    0 ; 9999 ;nicht EÜR-relevant
+  650 ;Büroeinrichtungen                                 ;     0 ; 1406 ;    0;;      ;    0 ;    0 ; 9999 ;nicht EÜR-relevant
+  670 ;GWG bis 410 Euro                                  ;     0 ; 1406 ;    0;;      ;    0 ;    0 ; 9999 ;nicht EÜR-relevant
+ 1370 ;Durchlaufende Posten                              ;     0 ;    0 ;    0;;      ;    0 ;    0 ; 9999 ;nicht EÜR-relevant
+ 1400 ;Abziehbare Vorsteuer                              ;    66 ;    0 ;    0;; Ausg ;  185 ;    0 ;  590 ;verauslagte Vorsteuern
+ 1401 ;Abziehbare Vorsteuer  7%                          ;    66 ;    0 ;    7;; Ausg ;  185 ;    0 ;  590 ;verauslagte Vorsteuern
+ 1402 ;Abziehbare Vorsteuer  7%  innergem. Erwerb        ;    61 ;    0 ;    0;; Ausg ;  185 ;    0 ;  590 ;verauslagte Vorsteuern
+ 1403 ;Abziehbare Vorsteuer 16%  innergem. Erwerb        ;    61 ;    0 ;    0;; Ausg ;  185 ;    0 ;  590 ;verauslagte Vorsteuern
+ 1404 ;Abziehbare Vorsteuer 19%  innergem. Erwerb        ;    61 ;    0 ;    0;; Ausg ;  185 ;    0 ;  590 ;verauslagte Vorsteuern
+ 1405 ;Abziehbare Vorsteuer 16%                          ;    66 ;    0 ;   16;; Ausg ;  185 ;    0 ;  590 ;verauslagte Vorsteuern
+ 1406 ;Abziehbare Vorsteuer 19%                          ;    66 ;    0 ;   19;; Ausg ;  185 ;    0 ;  590 ;verauslagte Vorsteuern
+ 1407 ;Abziehbare Vorsteuer nach § 13b UStG 19%          ;    67 ;    0 ;    0;; Ausg ;  185 ;    0 ;  590 ;verauslagte Vorsteuern
+ 1408 ;Anrechenbare Vorsteuer nach § 13b UStG            ;    67 ;    0 ;    0;; Ausg ;  185 ;    0 ;  590 ;verauslagte Vorsteuern
+ 1409 ;Anrechenbare Vorsteuer nach § 13b UStG 16%        ;    67 ;    0 ;    0;; Ausg ;  185 ;    0 ;  590 ;verauslagte Vorsteuern
+ 1418 ;Vorsteuer gem. §13b UStG 16%                      ;    67 ;    0 ;    0;; Ausg ;  185 ;    0 ;  590 ;verauslagte Vorsteuern
+ 1433 ;Bezahlte Einfuhr-Umsatzsteuer                     ;    62 ;    0 ;    0;; Ausg ;  185 ;    0 ;  590 ;verauslagte Vorsteuern
+ 1460 ;Geldtransit                                       ;     0 ;    0 ;    0;;      ;    0 ;    0 ; 9999 ;nicht EÜR-relevant
+ 1490 ;Verrechnungskonto Ist-Versteuerung                ;     0 ;    0 ;    0;;      ;    0 ;    0 ; 9999 ;nicht EÜR-relevant
+ 1550 ;Schecks                                           ;     0 ;    0 ;    0;;      ;    0 ;    0 ; 9999 ;nicht EÜR-relevant
+ 1600 ;Kasse                                             ;     0 ;    0 ;    0;;      ;    0 ;    0 ; 9999 ;nicht EÜR-relevant
+ 1700 ;Postbank                                          ;     0 ;    0 ;    0;;      ;    0 ;    0 ; 9999 ;nicht EÜR-relevant
+ 1800 ;Bank                                              ;     0 ;    0 ;    0;;      ;    0 ;    0 ; 9999 ;nicht EÜR-relevant
+ 2100 ;Privatentnahmen                                   ;     0 ;    0 ;    0;; Ausg ;    0 ;    0 ; 9999 ;nicht EÜR-relevant
+ 2130 ;Privatverbrauch                                   ;     0 ;    0 ;    0;; Ausg ;    0 ;    0 ; 9999 ;nicht EÜR-relevant
+ 2150 ;Privatsteuern                                     ;     0 ;    0 ;    0;; Ausg ;    0 ;    0 ; 9999 ;nicht EÜR-relevant
+ 2180 ;Privateinlagen                                    ;     0 ;    0 ;    0;; Einn ;    0 ;    0 ; 9999 ;nicht EÜR-relevant
+ 2250 ;Spenden, Zuwendungen                              ;     0 ;    0 ;    0;; Ausg ;    0 ;    0 ; 9999 ;nicht EÜR-relevant
+ 2990 ;Sonderabschreibungen                              ;     0 ;    0 ;    0;; Ausg ;    0 ;    0 ; 9999 ;nicht EÜR-relevant
+ 3800 ;Umsatzsteuer                                      ;    36 ;    0 ;    0;; Einn ; 1401 ;    0 ;  160 ;vereinnahmte Umsatzsteuer
+ 3801 ;Umsatzsteuer 7%                                   ;     0 ;    0 ;    7;; Einn ; 1401 ;    0 ;  160 ;vereinnahmte Umsatzsteuer
+ 3802 ;Umsatzsteuer  7% a. innergem. Erwerb              ;     0 ;    0 ;    0;; Einn ; 1401 ;    0 ;  160 ;vereinnahmte Umsatzsteuer
+ 3803 ;Umsatzsteuer 16% a. innergem. Erwerb              ;    98 ;    0 ;   16;; Einn ; 1401 ;    0 ;  160 ;vereinnahmte Umsatzsteuer
+ 3804 ;Umsatzsteuer 19% a. innergem. Erwerb              ;     0 ;    0 ;    0;; Einn ; 1401 ;    0 ;  160 ;vereinnahmte Umsatzsteuer
+ 3805 ;Umsatzsteuer 16 %                                 ;    36 ;    0 ;   16;; Einn ; 1401 ;    0 ;  160 ;vereinnahmte Umsatzsteuer
+ 3806 ;Umsatzsteuer 19 %                                 ;     0 ;    0 ;   19;; Einn ; 1401 ;    0 ;  160 ;vereinnahmte Umsatzsteuer
+ 3808 ;Umsatzsteuer a.i.Inland steuerpfl.EG-Lief. 19%    ;    81 ;    0 ;   19;; Einn ; 1401 ;    0 ;  160 ;vereinnahmte Umsatzsteuer
+ 3820 ;Umsatzsteuer-Vorauszahlungen                      ;     0 ;    0 ;    0;; Ausg ;  186 ;    0 ;  600 ;Umsatzsteuervorauszahlungen
+ 3830 ;Umsatzsteuer-Vorauszahlungen 1/11                 ;    39 ;    0 ;    0;; Ausg ;  186 ;    0 ;  600 ;Umsatzsteuervorauszahlungen
+ 3832 ;Umsatzsteuer-Erstattungen                         ;     0 ;    0 ;    0;; Einn ;  141 ;    0 ;  170 ;Umsatzsteuererstattungen
+ 3833 ;Umsatzst. n.§13b Abs.2 UStG 16%                   ;    53 ;    0 ;    0;; Einn ; 1401 ;    0 ;  160 ;vereinnahmte Umsatzsteuer
+ 3835 ;Umsatzsteuer § 13b UStG                           ;     0 ;    0 ;    0;; Einn ; 1401 ;    0 ;  160 ;vereinnahmte Umsatzsteuer
+ 3836 ;Umsatzsteuer § 13b UStG 16%                       ;    85 ;    0 ;    0;; Einn ; 1401 ;    0 ;  160 ;vereinnahmte Umsatzsteuer
+ 3837 ;Umsatzsteuer § 13b UStG 19%                       ;    85 ;    0 ;    0;; Einn ; 1401 ;    0 ;  160 ;vereinnahmte Umsatzsteuer
+ 3841 ;Umsatzsteuer Vorjahr                              ;     0 ;    0 ;    0;; Ausg ;  186 ;    0 ;  610 ;Umsatzsteuer Vorjahre
+ 4000 ;Umsatzerlöse                                      ;     0 ;    0 ;    0;; Einn ;  103 ;  301 ;  110 ;Umsatzerlöse
+ 4100 ;Steuerfreie Umsätze § 4 Nr. 8 ff UStG             ;    48 ;    0 ;    0;; Einn ;  103 ;  301 ;  110 ;Umsatzerlöse
+ 4120 ;Steuerfreie Umsätze § 4 Nr. 2 ff UStG             ;    43 ;    0 ;    0;; Einn ;  103 ;  301 ;  110 ;Umsatzerlöse
+ 4125 ;Steuerfreie Umsätze innergem. Lieferungen         ;    41 ;    0 ;    0;; Einn ;  103 ;  301 ;  110 ;Umsatzerlöse
+ 4150 ;Sonstige steuerfreie Umsätze                      ;    43 ;    0 ;    0;; Einn ;  103 ;  301 ;  110 ;Umsatzerlöse
+ 4180 ;Erlöse gem. § 24 UStG                             ;    76 ;    0 ;    0;; Einn ;  104 ;  301 ;  110 ;Umsatzerlöse
+ 4185 ;Erlöse gem. § 19 UStG                             ;     0 ;    0 ;    0;; Einn ;  111 ;  301 ;  110 ;Umsatzerlöse
+ 4200 ;Erlöse                                            ;    45 ;    0 ;    0;; Einn ;  103 ;  301 ;  110 ;Umsatzerlöse
+ 4300 ;Erlöse  7% USt                                    ;    86 ; 3801 ;    0;; Einn ;  112 ;  301 ;  110 ;Umsatzerlöse
+ 4310 ;Erlöse a.i.Inl.stpfl.Lieferungen EU-Lfg.  7% USt  ;    86 ; 3801 ;    0;; Einn ;  112 ;  301 ;  110 ;Umsatzerlöse
+ 4315 ;Erlöse a.i.Inl.stpfl.Lieferungen EU-Lfg.  19% USt ;    81 ; 3806 ;    0;; Einn ;  112 ;  301 ;  110 ;Umsatzerlöse
+ 4320 ;Erlöse a.i.and.EG-Land steuerpfl.Lieferungen      ;    48 ;    0 ;    0;; Einn ;  112 ;  301 ;  110 ;Umsatzerlöse
+ 4337 ;Erlöse gem. §13b UStG 16% Ust.                    ;    60 ;    0 ;    0;; Einn ;  103 ;  301 ;  110 ;Umsatzerlöse
+ 4400 ;Erlöse 19% USt                                    ;    81 ; 3806 ;    0;; Einn ;  112 ;  301 ;  110 ;Umsatzerlöse
+ 4500 ;Provisionserlöse                                  ;    35 ;    0 ;    0;; Einn ;  103 ;  304 ;  120 ;sonstige Erlöse
+ 4506 ;Provisionserlöse 7% USt                           ;    86 ; 3801 ;    0;; Einn ;  112 ;  304 ;  120 ;sonstige Erlöse
+ 4508 ;Provisionserlöse 19% USt                          ;    81 ; 3806 ;    0;; Einn ;  112 ;  304 ;  120 ;sonstige Erlöse
+ 4610 ;Warenentnahme 7% USt.                             ;    86 ; 3801 ;    0;; Einn ;  108 ;  301 ;  130 ;Eigenverbrauch
+ 4620 ;Warenentnahme 19% USt.                            ;    81 ; 3806 ;    0;; Einn ;  108 ;  301 ;  130 ;Eigenverbrauch
+ 4630 ;Verwendg.v.Gegenst. 7% USt                        ;    86 ; 3801 ;    0;; Einn ;  108 ;  304 ;  130 ;Eigenverbrauch
+ 4639 ;Private Kfz-Nutzung ohne USt                      ;    48 ;    0 ;    0;; Einn ;  106 ;  304 ;  130 ;Eigenverbrauch
+ 4645 ;Private Kfz-Nutzung 19% USt                       ;    81 ; 3806 ;    0;; Einn ;  106 ;  304 ;  130 ;Eigenverbrauch
+ 4646 ;Private Telefonnutzung 19% USt                    ;    81 ; 3806 ;    0;; Einn ;  108 ;  304 ;  130 ;Eigenverbrauch
+ 4845 ;Erlöse Anlagenverkauf 19%                         ;    81 ; 3806 ;    0;; Einn ;  102 ;  301 ;  110 ;Umsatzerlöse
+ 4930 ;Erträge  a. Auflösung v. Rückstellungen           ;     0 ;    0 ;    0;; Einn ; 1201 ;  318 ;  150 ;außerordentliche Erträge
+ 4934 ;Erträge a.Auflösung v.SoPo m.Rückl.Ant.(Existenzg);     0 ;    0 ;    0;; Einn ;  122 ;  318 ;  150 ;außerordentliche Erträge
+ 4936 ;Erträge a.Auflösung v.SoPo mit Rückl.Ant(.Anspar) ;     0 ;    0 ;    0;; Einn ;  122 ;  318 ;  150 ;außerordentliche Erträge
+ 4970 ;Versicherungsentschädigungen                      ;     0 ;    0 ;    0;; Einn ;  103 ;  318 ;  150 ;außerordentliche Erträge
+ 5000 ;Aufwend. für Roh-, Hilfs- und Betriebsstoffe      ;     0 ; 1406 ;    0;; Ausg ;  100 ;  305 ;  510 ;Wareneinsatz und Fremdleistungen
+ 5100 ;Einkauf Roh- Hilfs- u. Betriebsstoffe             ;     0 ; 1406 ;    0;; Ausg ;  100 ;  305 ;  510 ;Wareneinsatz und Fremdleistungen
+ 5200 ;Wareneingang                                      ;     0 ;    0 ;    0;; Ausg ;  100 ;  305 ;  510 ;Wareneinsatz und Fremdleistungen
+ 5300 ;Wareneingang  7% VSt.                             ;     0 ; 1401 ;    0;; Ausg ;  100 ;  305 ;  510 ;Wareneinsatz und Fremdleistungen
+ 5340 ;Wareneingang 16% VSt.                             ;     0 ; 1405 ;    0;; Ausg ;  100 ;  305 ;  510 ;Wareneinsatz und Fremdleistungen
+ 5400 ;Wareneingang 19% VSt.                             ;     0 ; 1406 ;    0;; Ausg ;  100 ;  305 ;  510 ;Wareneinsatz und Fremdleistungen
+ 5420 ;Innergem. Erwerb  7% VSt/Ust                      ;    93 ;    0 ;    0;; Ausg ;  100 ;  305 ;  510 ;Wareneinsatz und Fremdleistungen
+ 5425 ;Innergem. Erwerb 19% VSt/Ust                      ;    89 ;    0 ;    0;; Ausg ;  100 ;  305 ;  510 ;Wareneinsatz und Fremdleistungen
+ 5430 ;Innergem. Erwerb ohne VSt-Abzug u. 7% USt         ;    93 ;    0 ;    0;; Ausg ;  100 ;  305 ;  510 ;Wareneinsatz und Fremdleistungen
+ 5433 ;Innergem. Erwerb 16% VSt/Ust                      ;    95 ;    0 ;    0;; Ausg ;  100 ;  305 ;  510 ;Wareneinsatz und Fremdleistungen
+ 5435 ;Innergem. Erwerb, ohne VSt-Abzug u. 19% USt.      ;    89 ;    0 ;    0;; Ausg ;  100 ;  305 ;  510 ;Wareneinsatz und Fremdleistungen
+ 5440 ;IG.Erwerb v.Neu-KFZ v.Lief.ohne Ust-ID 19% VSt/Ust;    94 ;    0 ;    0;; Ausg ;  100 ;  305 ;  510 ;Wareneinsatz und Fremdleistungen
+ 5550 ;Steuerfreier innergem. Erwerb                     ;    91 ;    0 ;    0;; Ausg ;  110 ;  305 ;  510 ;Wareneinsatz und Fremdleistungen
+ 5900 ;Fremdleistungen                                   ;     0 ; 1406 ;    0;; Ausg ;  110 ; 3051 ;  510 ;Wareneinsatz und Fremdleistungen
+ 5910 ;Bauleistungen e.i.Inland ans.UN  7% VSt./USt.     ;    84 ;    0 ;    0;; Ausg ;  110 ; 3051 ;  510 ;Wareneinsatz und Fremdleistungen
+ 5915 ;Leistung.n.§13b UStG e.i.Ausland ans.UN 7% VSt/USt;    52 ;    0 ;    0;; Ausg ;  110 ; 3051 ;  510 ;Wareneinsatz und Fremdleistungen
+ 5920 ;Bauleistungen e.i.Inland ans.UN  19% VSt./USt.    ;    84 ;    0 ;    0;; Ausg ;  110 ; 3051 ;  510 ;Wareneinsatz und Fremdleistungen
+ 5925 ;Leistung.n.§13bUStG e.i.Ausland ans.UN 19% VSt/USt;    52 ;    0 ;    0;; Ausg ;  110 ; 3051 ;  510 ;Wareneinsatz und Fremdleistungen
+ 5930 ;Bauleistungen e.i.Inland ans.UN o.VSt.Abzug 7% Ust;    84 ;    0 ;    0;; Ausg ;  110 ; 3051 ;  510 ;Wareneinsatz und Fremdleistungen
+ 5935 ;Leistung.n.§13b UStG e.i.Ausl.ans.UN o.VSt/7%Ust  ;    52 ;    0 ;    0;; Ausg ;  110 ; 3051 ;  510 ;Wareneinsatz und Fremdleistungen
+ 5940 ;Bauleistung.e.i.Inland ans.UN o. VSt.Abzug 19% Ust;    84 ;    0 ;    0;; Ausg ;  110 ; 3051 ;  510 ;Wareneinsatz und Fremdleistungen
+ 5945 ;Leistung.n.§13b UStG e.i.Ausl.ans.UN o.VSt/19%Ust ;    52 ;    0 ;    0;; Ausg ;  110 ; 3051 ;  510 ;Wareneinsatz und Fremdleistungen
+ 6000 ;Löhne u. Gehälter                                 ;     0 ;    0 ;    0;; Ausg ;  120 ;  306 ;  520 ;Personalkosten
+ 6010 ;Löhne                                             ;     0 ;    0 ;    0;; Ausg ;  120 ;  306 ;  520 ;Personalkosten
+ 6020 ;Gehälter                                          ;     0 ;    0 ;    0;; Ausg ;  120 ;  306 ;  520 ;Personalkosten
+ 6030 ;Aushilfslöhne                                     ;     0 ;    0 ;    0;; Ausg ;  120 ;  306 ;  520 ;Personalkosten
+ 6040 ;Pauschale Steuer für Aushilfen                    ;     0 ;    0 ;    0;; Ausg ;  120 ;  306 ;  520 ;Personalkosten
+ 6045 ;Bedienungsgelder                                  ;     0 ;    0 ;    0;; Ausg ;  120 ;  306 ;  520 ;Personalkosten
+ 6050 ;Ehegattengehalt                                   ;     0 ;    0 ;    0;; Ausg ;  120 ;  306 ;  520 ;Personalkosten
+ 6060 ;Freiwillige soz. Aufwendungen - LSt.pfl.          ;     0 ;    0 ;    0;; Ausg ;  120 ;  306 ;  520 ;Personalkosten
+ 6069 ;Pauschale Steuer sonst. Bezüge                    ;     0 ;    0 ;    0;; Ausg ;  120 ;  306 ;  520 ;Personalkosten
+ 6070 ;Krankengeldzuschüsse                              ;     0 ;    0 ;    0;; Ausg ;  120 ;  306 ;  520 ;Personalkosten
+ 6110 ;Gesetzliche soziale Aufwendungen                  ;     0 ;    0 ;    0;; Ausg ;  120 ;  306 ;  520 ;Personalkosten
+ 6120 ;Beiträge zur Berufsgenossenschaft                 ;     0 ;    0 ;    0;; Ausg ;  120 ;  306 ;  520 ;Personalkosten
+ 6140 ;Aufwendungen für Altersversorgung                 ;     0 ;    0 ;    0;; Ausg ;  120 ; 3061 ;  520 ;Personalkosten
+ 6170 ;Sonstige soziale Abgaben                          ;     0 ;    0 ;    0;; Ausg ;  120 ; 3061 ;  520 ;Personalkosten
+ 6200 ;Abschreibung  immaterielle Vermögensgegenstände   ;     0 ;    0 ;    0;; Ausg ;  131 ;  307 ;  530 ;Abschreibungen
+ 6205 ;Abschreibungen Geschäfts- od. Firmenwert          ;     0 ;    0 ;    0;; Ausg ;  131 ;  307 ;  530 ;Abschreibungen
+ 6210 ;Außerpl. Abschreibungen auf immaterielle Vermögens;     0 ;    0 ;    0;; Ausg ;  131 ;  307 ;  530 ;Abschreibungen
+ 6220 ;Abschreibungen auf Sachanlagen                    ;     0 ;    0 ;    0;; Ausg ;  130 ;  307 ;  530 ;Abschreibungen
+ 6221 ;Abschreibungen auf Gebäude                        ;     0 ;    0 ;    0;; Ausg ;  136 ;  307 ;  530 ;Abschreibungen
+ 6222 ;Abschreibungen auf KFZ                            ;     0 ;    0 ;    0;; Ausg ;  130 ;  307 ;  530 ;Abschreibungen
+ 6240 ;Sonderabschreibungen Sachanlagen                  ;     0 ;    0 ;    0;; Ausg ;  130 ;  307 ;  530 ;Abschreibungen
+ 6241 ;Sond. Abschreib.nach § 7g Abs.1 u.2 EStG(ohne Kfz);     0 ;    0 ;    0;; Ausg ;  134 ;  307 ;  530 ;Abschreibungen
+ 6242 ;Sond. Abschreib.nach § 7g Abs.1 u.2 EStG(für Kfz) ;     0 ;    0 ;    0;; Ausg ;  134 ;  307 ;  530 ;Abschreibungen
+ 6260 ;Sofortabschreibung GWG                            ;     0 ;    0 ;    0;; Ausg ;  132 ;  307 ;  530 ;Abschreibungen
+ 6262 ;Abschreibung aktivierte GWG                       ;     0 ;    0 ;    0;; Ausg ;  132 ;  307 ;  530 ;Abschreibungen
+ 6266 ;Außerplanm. Abschreibung aktivierte GWG           ;     0 ;    0 ;    0;; Ausg ;  132 ;  307 ;  530 ;Abschreibungen
+ 6300 ;Sonst. betriebl. Aufwendungen                     ;     0 ; 1406 ;    0;; Ausg ;  150 ; 3081 ;  540 ;sonst. betriebliche Aufwendungen
+ 6305 ;Raumkosten                                        ;     0 ; 1406 ;    0;; Ausg ;  150 ; 3081 ;  542 ;Raumkosten
+ 6310 ;Miete                                             ;     0 ; 1406 ;    0;; Ausg ;  150 ; 3081 ;  542 ;Raumkosten
+ 6315 ;Pacht                                             ;     0 ; 1406 ;    0;; Ausg ;  150 ; 3081 ;  542 ;Raumkosten
+ 6320 ;Heizung                                           ;     0 ; 1406 ;    0;; Ausg ;  150 ; 3081 ;  542 ;Raumkosten
+ 6325 ;Gas, Strom, Wasser                                ;     0 ; 1406 ;    0;; Ausg ;  150 ; 3081 ;  542 ;Raumkosten
+ 6330 ;Reinigung                                         ;     0 ; 1406 ;    0;; Ausg ;  150 ; 3081 ;  542 ;Raumkosten
+ 6335 ;Instandhaltung betrieblicher Räume                ;     0 ; 1406 ;    0;; Ausg ;  150 ; 3081 ;  542 ;Raumkosten
+ 6340 ;Abgaben für betrieblich genutzten Grundbesitz     ;     0 ; 1406 ;    0;; Ausg ;  150 ; 3081 ;  542 ;Raumkosten
+ 6345 ;Sonstige Raumkosten                               ;     0 ; 1406 ;    0;; Ausg ;  150 ; 3081 ;  542 ;Raumkosten
+ 6348 ;Aufw.f. häusl.Arbeitszimmer (abzugsfähiger Anteil);     0 ; 1406 ;    0;; Ausg ;  172 ; 3081 ;  542 ;Raumkosten
+ 6349 ;Aufw.f. häusl.Arbeitszimmer (nicht abzugsfähig)   ;     0 ;    0 ;    0;; Ausg ;  168 ; 3081 ; 9999 ;nicht EÜR-relevant
+ 6400 ;Versicherungen                                    ;     0 ;    0 ;    0;; Ausg ;  172 ; 3083 ;  544 ;Versicherungen, Beiträge
+ 6430 ;Sonstige Abgaben                                  ;     0 ;    0 ;    0;; Ausg ;  183 ; 3083 ;  544 ;Versicherungen, Beiträge
+ 6450 ;Reparaturen und Instandhaltung von Bauten         ;     0 ; 1406 ;    0;; Ausg ;  183 ; 3087 ;  548 ;Reparatur und Instandhaltung
+ 6460 ;Reparatur und Instandhaltung Maschinen            ;     0 ; 1406 ;    0;; Ausg ;  183 ; 3087 ;  548 ;Reparatur und Instandhaltung
+ 6470 ;Reparatur und Instandh.Betr.u.Geschäftsaust.      ;     0 ; 1406 ;    0;; Ausg ;  183 ; 3087 ;  548 ;Reparatur und Instandhaltung
+ 6485 ;Reparatur und Instandh. andere Anlagen            ;     0 ; 1406 ;    0;; Ausg ;  183 ; 3087 ;  548 ;Reparatur und Instandhaltung
+ 6490 ;Sonstige Reparaturen, Instandhaltungen            ;     0 ; 1406 ;    0;; Ausg ;  183 ; 3087 ;  548 ;Reparatur und Instandhaltung
+ 6495 ;Wartungskosten f. Hard- und Software              ;     0 ; 1406 ;    0;; Ausg ;  183 ; 3087 ;  548 ;Reparatur und Instandhaltung
+ 6500 ;Kfz-Kosten                                        ;     0 ; 1406 ;    0;; Ausg ;  140 ; 3084 ;  546 ;KFZ-Kosten
+ 6520 ;Kfz-Versicherungen                                ;     0 ;    0 ;    0;; Ausg ;  140 ; 3084 ;  546 ;KFZ-Kosten
+ 6530 ;Laufende Kfz-Betriebskosten                       ;     0 ; 1406 ;    0;; Ausg ;  140 ; 3084 ;  546 ;KFZ-Kosten
+ 6540 ;Kfz-Reparaturen                                   ;     0 ; 1406 ;    0;; Ausg ;  140 ; 3084 ;  546 ;KFZ-Kosten
+ 6550 ;Garagenmieten                                     ;     0 ; 1406 ;    0;; Ausg ;  140 ; 3084 ;  546 ;KFZ-Kosten
+ 6560 ;Fremdfahrzeugkosten                               ;     0 ; 1406 ;    0;; Ausg ;  140 ; 3084 ;  546 ;KFZ-Kosten
+ 6570 ;Sonst. Kfz-Kosten                                 ;     0 ; 1406 ;    0;; Ausg ;  140 ; 3084 ;  546 ;KFZ-Kosten
+ 6580 ;Mautgebühren                                      ;     0 ;    0 ;    0;; Ausg ;  140 ; 3084 ;  546 ;KFZ-Kosten
+ 6600 ;Werbekosten                                       ;     0 ; 1406 ;    0;; Ausg ;  177 ; 3085 ;  550 ;Werbe- und Reisekosten
+ 6610 ;Geschenke (abzugsfähig)                           ;     0 ; 1406 ;    0;; Ausg ;  174 ; 3085 ;  550 ;Werbe- und Reisekosten
+ 6620 ;Geschenke (nicht abzugsfähig)                     ;     0 ;    0 ;    0;; Ausg ;  164 ; 3085 ; 9999 ;nicht EÜR-relevant
+ 6625 ;Geschenke ausschl. betrieblich genutzt            ;     0 ; 1406 ;    0;; Ausg ;  174 ; 3085 ;  550 ;Werbe- und Reisekosten
+ 6630 ;Repräsentationskosten (abziehb.)                  ;     0 ; 1406 ;    0;; Ausg ;  177 ; 3085 ;  550 ;Werbe- und Reisekosten
+ 6640 ;Bewirtungskosten (abzugsfähig)                    ;     0 ; 1406 ;    0;; Ausg ;  175 ; 3085 ;  550 ;Werbe- und Reisekosten
+ 6641 ;Sonst.eingeschränkte Betriebsausgaben (abziehbar) ;     0 ; 1406 ;    0;; Ausg ;  177 ; 3085 ;  550 ;Werbe- und Reisekosten
+ 6642 ;Sonst.eingeschränkte Betriebsausgaben (nicht abz.);     0 ;    0 ;    0;; Ausg ;  168 ; 3085 ; 9999 ;nicht EÜR-relevant
+ 6644 ;Nicht abzugsfähige Bewirtungskosten               ;     0 ; 1406 ;    0;; Ausg ;  165 ; 3085 ; 9999 ;nicht EÜR-relevant
+ 6645 ;Nicht abzugsfähige Betriebsausgaben               ;     0 ;    0 ;    0;; Ausg ;  168 ; 3085 ; 9999 ;nicht EÜR-relevant
+ 6650 ;Reisekosten Arbeitnehmer                          ;     0 ;    0 ;    0;; Ausg ;  173 ; 3085 ;  550 ;Werbe- und Reisekosten
+ 6660 ;Reisekosten AN Übernachtungsaufwand               ;     0 ;    0 ;    0;; Ausg ;  173 ; 3085 ;  550 ;Werbe- und Reisekosten
+ 6663 ;Reisekosten AN Fahrtkosten                        ;     0 ;    0 ;    0;; Ausg ;  173 ; 3085 ;  550 ;Werbe- und Reisekosten
+ 6664 ;Reisekosten AN Verpflegungsmehraufwand            ;     0 ;    0 ;    0;; Ausg ;  173 ; 3085 ;  550 ;Werbe- und Reisekosten
+ 6668 ;Kilometergelderstattung Arbeitnehmer              ;     0 ;    0 ;    0;; Ausg ;  173 ; 3085 ;  550 ;Werbe- und Reisekosten
+ 6670 ;Reisekosten Unternehmer                           ;     0 ;    0 ;    0;; Ausg ;  173 ; 3085 ;  550 ;Werbe- und Reisekosten
+ 6673 ;Reisekosten UN Fahrtkosten                        ;     0 ;    0 ;    0;; Ausg ;  173 ; 3085 ;  550 ;Werbe- und Reisekosten
+ 6674 ;Reisekosten UN Verpflegungsmehraufwand            ;     0 ;    0 ;    0;; Ausg ;  173 ; 3085 ;  550 ;Werbe- und Reisekosten
+ 6680 ;Reisekosten UN Übernachtungsaufwand               ;     0 ;    0 ;    0;; Ausg ;  173 ; 3085 ;  550 ;Werbe- und Reisekosten
+ 6688 ;Fahrten zw. Wohnung und Arbeitsstätte(abziehbar)  ;     0 ;    0 ;    0;; Ausg ;  176 ; 3085 ;  550 ;Werbe- und Reisekosten
+ 6689 ;Fahrten zw. Wohnung und Arbeitsstätte(nicht abz.) ;     0 ;    0 ;    0;; Ausg ;  168 ; 3085 ; 9999 ;nicht EÜR-relevant
+ 6700 ;Kosten der Warenabgabe                            ;     0 ; 1406 ;    0;; Ausg ;  100 ; 3086 ;  558 ;Kosten der Warenabgabe
+ 6710 ;Verpackungsmaterial                               ;     0 ; 1406 ;    0;; Ausg ;  100 ; 3086 ;  558 ;Kosten der Warenabgabe
+ 6740 ;Ausgangsfrachten                                  ;     0 ; 1406 ;    0;; Ausg ;  100 ; 3086 ;  558 ;Kosten der Warenabgabe
+ 6760 ;Transportversicherungen                           ;     0 ;    0 ;    0;; Ausg ;  100 ; 3086 ;  558 ;Kosten der Warenabgabe
+ 6770 ;Verkaufsprovision                                 ;     0 ; 1406 ;    0;; Ausg ;  100 ; 3086 ;  558 ;Kosten der Warenabgabe
+ 6780 ;Fremdarbeiten                                     ;     0 ; 1406 ;    0;; Ausg ;  110 ; 3086 ;  558 ;Kosten der Warenabgabe
+ 6790 ;Aufwendungen für Gewährleistungen                 ;     0 ; 1406 ;    0;; Ausg ;  183 ; 3086 ;  558 ;Kosten der Warenabgabe
+ 6800 ;Porto                                             ;     0 ;    0 ;    0;; Ausg ;  192 ;  308 ;  552 ;Bürobedarf, Porto, Telefon
+ 6805 ;Telefon                                           ;     0 ; 1406 ;    0;; Ausg ;  192 ;  308 ;  552 ;Bürobedarf, Porto, Telefon
+ 6810 ;Telefax                                           ;     0 ; 1406 ;    0;; Ausg ;  192 ;  308 ;  552 ;Bürobedarf, Porto, Telefon
+ 6815 ;Bürobedarf                                        ;     0 ; 1406 ;    0;; Ausg ;  192 ;  308 ;  552 ;Bürobedarf, Porto, Telefon
+ 6820 ;Zeitschriften, Bücher                             ;     0 ; 1401 ;    0;; Ausg ;  194 ;  308 ;  554 ;Fortbildung, Fachliteratur
+ 6821 ;Fortbildungskosten                                ;     0 ; 1406 ;    0;; Ausg ;  194 ;  308 ;  554 ;Fortbildung, Fachliteratur
+ 6822 ;Freiwillige Sozialleistungen                      ;     0 ; 1406 ;    0;; Ausg ;  194 ;  308 ;  540 ;sonst. betriebliche Aufwendungen
+ 6825 ;Rechts- und Beratungskosten                       ;     0 ; 1406 ;    0;; Ausg ;  194 ;  308 ;  556 ;Rechts- und Beratungskosten
+ 6827 ;Abschluß- und Prüfungskosten                      ;     0 ; 1406 ;    0;; Ausg ;  194 ;  308 ;  556 ;Rechts- und Beratungskosten
+ 6830 ;Buchführungskosten                                ;     0 ; 1406 ;    0;; Ausg ;  194 ;  308 ;  556 ;Rechts- und Beratungskosten
+ 6835 ;Mieten für Einrichtungen                          ;     0 ; 1406 ;    0;; Ausg ;  183 ;  308 ;  540 ;sonst. betriebliche Aufwendungen
+ 6840 ;Mietleasing                                       ;     0 ; 1406 ;    0;; Ausg ;  183 ;  308 ;  540 ;sonst. betriebliche Aufwendungen
+ 6845 ;Werkzeuge                                         ;     0 ; 1406 ;    0;; Ausg ;  183 ;  308 ;  540 ;sonst. betriebliche Aufwendungen
+ 6850 ;Sonst. Betriebsbedarf                             ;     0 ; 1406 ;    0;; Ausg ;  183 ;  308 ;  540 ;sonst. betriebliche Aufwendungen
+ 6855 ;Nebenkosten des Geldverkehrs                      ;     0 ;    0 ;    0;; Ausg ;  183 ;  308 ;  540 ;sonst. betriebliche Aufwendungen
+ 6859 ;Aufwend. f. Abraum- u. Abfallbeseitigung          ;     0 ; 1406 ;    0;; Ausg ;  183 ;  308 ;  540 ;sonst. betriebliche Aufwendungen
+ 6885 ;Erlöse Anlagenverkauf 19%                         ;    81 ; 3806 ;    0;; Einn ;  102 ;  301 ;  110 ;Umsatzerlöse
+ 6889 ;Erlöse Anlagenverkauf                             ;     0 ;    0 ;    0;; Einn ;  102 ;  301 ;  110 ;Umsatzerlöse
+ 6925 ;Einstellg.in SoPo mit Rücklageanteil(stfr.Rücklag);     0 ;    0 ;    0;; Ausg ;  187 ;  319 ;  570 ;außerordentliche Aufwendungen
+ 6926 ;Einstellg.in SoPo mit Rücklageanteil(Ansparabsch) ;     0 ;    0 ;    0;; Ausg ;  188 ;  319 ;  570 ;außerordentliche Aufwendungen
+ 6928 ;Einstellg.in SoPo mit Rücklageanteil(Existenzgr.) ;     0 ;    0 ;    0;; Ausg ;  189 ;  319 ;  570 ;außerordentliche Aufwendungen
+ 7310 ;Zinsaufwand für kurzfristige Verbindlichkeiten    ;     0 ;    0 ;    0;; Ausg ;  179 ;  315 ;  560 ;Zinsaufwendungen
+ 7313 ;Nicht abzugsfähig.Schuldzinsen langfr.§4Abs4a EStG;     0 ;    0 ;    0;; Ausg ;  167 ;  315 ; 9999 ;nicht EÜR-relevant
+ 7314 ;Nicht abzugsfähig.Schuldzinsen kurzfr.§4Abs4a EStG;     0 ;    0 ;    0;; Ausg ;  167 ;  315 ; 9999 ;nicht EÜR-relevant
+ 7320 ;Zinsaufwendungen f. langfr. Verbindlichkeiten     ;     0 ;    0 ;    0;; Ausg ;  179 ;  315 ;  560 ;Zinsaufwendungen
+ 7326 ;Zinsen zur Finanzierung des Anlagevermögen        ;     0 ;    0 ;    0;; Ausg ;  178 ;  315 ;  560 ;Zinsaufwendungen
+ 7610 ;Gewerbesteuer                                     ;     0 ;    0 ;    0;; Ausg ;  183 ; 3082 ;  580 ;betriebliche Steuern
+ 7650 ;Sonst. Steuern                                    ;     0 ;    0 ;    0;; Ausg ;  183 ; 3211 ;  580 ;betriebliche Steuern
+ 7680 ;Grundsteuer                                       ;     0 ;    0 ;    0;; Ausg ;  151 ; 3082 ;  580 ;betriebliche Steuern
+ 7685 ;Kfz-Steuer                                        ;     0 ;    0 ;    0;; Ausg ;  140 ; 3082 ;  580 ;betriebliche Steuern
+ 9000 ;Saldenvorträge Sachkonten                         ;     0 ;    0 ;    0;;      ;    0 ;    0 ; 9999 ;nicht EÜR-relevant
+
+Anzahl Konten: 218
+

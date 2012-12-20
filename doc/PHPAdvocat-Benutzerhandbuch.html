@@ -1,0 +1,351 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+  
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+
+  
+  <title>PHPAdvocat Benutzerhandbuch</title>
+</head>
+
+
+<body>
+
+<h1 style="text-align: center;">PHPAdvocat</h1>
+
+<div style="text-align: center;">Benutzerhandbuch<br>
+
+Burkhard Obger&ouml;ker<br>
+
+Stand: Januar 2006<br>
+
+Version: 0.8<br>
+
+</div>
+
+<h1>Inhalt</h1>
+
+<a href="#vorwort">Vorwort</a><br>
+
+<a href="#anmelden">Anmelden<br>
+
+</a><a href="#startseite">Startseite<br>
+
+</a><a href="#aktenverwaltung">Aktenverwaltung<br>
+
+</a><a href="#kostenblatt">Kostenblatt<br>
+
+</a><a href="#rechnungen">Rechnungen<br>
+
+</a><a href="#schriftverkehr">Schriftverkehr<br>
+
+</a><a href="#adressen">Adressen<br>
+
+</a><a href="#kalender">Kalender<br>
+
+</a><a href="#buchhaltung">Buchhaltung<br>
+
+</a><a href="#serverschema">Server-Schema<br>
+
+</a><a href="#erd">Entity-Relationship-Modell<br>
+
+</a>
+<h1><a name="vorwort">Vorwort</a></h1>
+
+PHPAdvocat entstand aus der Not heraus: Kommerzielle Programme waren
+nicht nur zu teuer, sie waren zudem noch auf Windows als Betriebssystem
+festgelegt. Um dieser Misere zu entgehen entstand ein Produkt, das
+Web-Basiert in PHP programmiert wurde und somit auf sehr
+unterschiedlichen Plattformen installiert werden kann. Die Bedienung
+erfordert lediglich einen HTML-Browsern der - optional - noch
+JavaScript beherrschen sollte. Damit ist so ziemlich jedes
+Betriebssystem abgedeckt.<br>
+
+<h1><a name="anmelden">Anmelden</a></h1>
+
+Da in PHPAdvovat durchaus sensible Daten gespeichert werden, ist der
+Zugang beschr&auml;nkt durch eine Benutzerverwaltung. Die
+Identifikation erfolgt dabei durch die verwendete Datenbank, so dass
+dort eine g&uuml;ltige Benutzer/Passwort-Kombination hinterlegt sein
+muss. Diese Kennung muss auf dem Startbildschirm eingegeben werden, um
+in das System zu gelangen.<br>
+
+<img alt="Anmeldung" src="phpadvocat01.jpg" style="border: 2px solid ;"><br>
+
+<h1><a name="startseite">Startseite</a></h1>
+
+Nach erfolgreicher Anmeldung erscheint der Willkommensbildschirm, auf
+dem eine &Uuml;bersicht &uuml;ber den aktuellen Status gegeben wird.
+Neben den heute vorliegenden Terminen wird der aktuelle Finanzstatus
+angezeigt. Ein positiver Wert wird gr&uuml;n, ein negativer rot
+unterlegt, um die Bedeutung hervorzuheben. Die aktuellen Termine sind
+mit einem Link ausgestattet, &uuml;ber den mit einem Mausklick die
+entsprechende Akte ge&ouml;ffnet werden kann.<br>
+
+<img alt="Startseite" src="phpadvocat02.jpg" style="border: 1px solid ;"><br>
+
+<h1><a name="aktenverwaltung">Aktenverwaltung</a></h1>
+
+Auf der linken Seite des Bildschirms erscheint das
+Navigationsmen&uuml;,
+&uuml;ber das die einzelnen Module erreicht werden k&ouml;nnen. Ein
+grauer Balken markiert dabei die momentan ausgew&auml;hlte Position.<br>
+
+Ein Mausklick auf den Punkt "Akten" erzeigt eine tabellarische
+&Uuml;bersicht &uuml;ber die zurzeit offenen Akten:<br>
+
+<img alt="Aktenliste" src="phpadvocat03.jpg" style="border: 1px solid ;"><br>
+
+Dort kann eine bestehende Akte ge&ouml;ffnet oder eine Neue angelegt
+werden. Letzteres erfordert eine bereits vorhandene Adresse des
+Mandanten. Wird statt dessen der Eintrag
+"Neue Adresse" gew&auml;hlt, so erscheint automatisch die <a href="#adressen">Eingabemaske</a>
+f&uuml;r die neue Mandantenadresse. Nach erfolgter Eingabe wird diese
+einer neu angelegten Akte hinzugef&uuml;gt und letztere Als erster
+Listeneintrag angeboten.<br>
+
+Wird eine Akte ausgew&auml;hlt, so bietet sich folgendes Bild:<br>
+
+<img alt="Akte-Termine" src="phpadvocat04.jpg" style="border: 1px solid ;"><br>
+
+Im oberen Bereich bietet sich die &Uuml;bersicht &uuml;ber die
+Standard-Daten der Akte, sowie der finanzielle Stand des Kostenblattes.
+Wie in der Wilkommensseite wird ein positiver Wert gr&uuml;n, ein
+negativer rot unterlegt.<br>
+
+Werden in diesem Bereich Daten ver&auml;ndert, m&uuml;ssen sie aktiv
+gespeichert werden, indem der Knopf "Sichern" angeklickt wird.
+Anderenfalls gehen sie verloren. Dieses Verhalten ist durch die
+Web-Technik vorgegeben und kann lediglich durch aufw&auml;ndige
+JS-Programmierung der eines einer nativen Client nachempfunden werden.
+Da dieses aber zudem die Browserauswahl sehr einschr&auml;nkt und
+weitere Sicherheitsschw&auml;chen nach sich ziehen kann, wurde bewusst
+darauf verzichtet.<br>
+
+Der untere Bereich dieser Maske stellt den Detailbereich dar, in dem
+von der Akte abg&auml;ngige Daten angezeigt werden. Die listenartig
+angezeigten Details (hier: Termine) k&ouml;nnen &uuml;ber die untere
+Zeile der Tabelle hinzugef&uuml;gt oder jeweils durch einen Klick auf
+die "M&uuml;lltonne" am rechten Rand gel&ouml;scht werden. Sofern
+JavaScript aktiv ist, erfolgt dort zun&auml;chst eine
+Sicherheitsabfrage.<br>
+
+<h2><a name="kostenblatt">Kostenblatt</a></h2>
+
+<img alt="Akte-Kostenblatt" src="phpadvocat05.jpg" style="border: 1px solid ;"><br>
+
+Der Link "Kostenblatt" f&uuml;hrt zu der Anzeige des Kostenblattes,
+dessen Eintr&auml;ge ebenfalls in Tabellenform angezeigt werden. Das
+Hinzuf&uuml;gen eines Eintrages ist allerdings mit einer Besonderheit
+verbunden. Der Kostenart-Typ wird in einer Drop-Down-Liste angeboten,
+wobei zus&auml;tzlich zu der Bezeichnung der mit dem Typ verbundene
+Mehrwertsteuer-Satz angezeigt wird. Ist dieser gr&ouml;&szlig;er als 0,
+so wird die entsprechende Mehrwertsteuer aus dem angegebenen Betrag
+berechnet und eingetragen. <span style="font-weight: bold;">Abh&auml;ngig
+von der Checkbox in der Spalte
+"Ust." wird bei gesetztem Haken davon ausgegangen, dass ein Brutto-Wert
+eingetragen wurde, w&auml;hrend bei nicht gesetztem Haken von einem
+Netto-Betrag ausgegangen wird.</span> Die Eintr&auml;ge werden dabei im
+Buchhaltungsmodul eingetragen, so dass gleichzeitig die Buchhaltung
+weitergef&uuml;hrt wird. <br>
+
+<h2><a name="rechnungen">Rechnungen</a></h2>
+
+<img alt="Akte-Rechnungen" src="phpadvocat06.jpg" style="border: 1px solid ;"><br>
+
+Soll eine Rechnung geschrieben werden, so wird in der dargestellten
+Liste zun&auml;chst ein Eintrag erwartet, der &uuml;ber den Knopf "Neu"
+entsteht. Das angegebene Datum - das jeweils mit dem aktuellen Datum
+vorbelegt wird, stellt in der gedrucken Version das Rechnungsdatum dar.
+Die Tabellenform ist erforderlich, da pro Akte
+mehrere Rechnungen erstellt werden k&ouml;nnen. Ein Klick auf die
+Rechnungsnummer f&uuml;hrt dann in die Rechnungsbearbeitungs-Maske.<br>
+
+<img alt="Rechnung" src="phpadvocat07.jpg" style="border: 1px solid ;"><br>
+
+Adressat und Leistungsbeschreibung werden im oberen Bereich gestgelegt,
+w&auml;hrend die Rechnungspositionen&nbsp; in Listenform erg&auml;nzt
+werden. War bei der Neueinrichtung der Rechnung der gegenstandswert der
+Akte bekannt, so wird dieser &uuml;bernommen und der Einheitsbetrag
+f&uuml;r Geb&uuml;hren nach RVG berechnet. Wurde der Gegenstandswert
+nach der Rechnungserstellung erg&auml;nzt, kann dieser wie auch der
+Geb&uuml;hrenwert &uuml;ber die angelagerten Kn&ouml;pfe jederzeit
+erg&auml;nzt werden.<br>
+
+Die Leistungsbezeichnung der einzelnen Positionen wird aus dem RVG
+gew&auml;hlt, der Betrag von Hand
+eingetragen. Bei Honoraren kann statt eines festen Betrages
+der Multiplikationsfaktor gew&auml;hlt werden, nach dem
+(gem&auml;&szlig;
+RVG) der passende Betrag nach dem Gegenstandwert berechnet und
+erg&auml;nzt wird. Der Mehrwertsteuersatz wird ebenfalls als
+Auswahl-Liste vorgegeben und steht standardm&auml;&szlig;ig auf
+"16%". Wird ein Betrag eingegeben, so wird dieser als Netto-Betrag
+gewertet.<br>
+
+Der Leistungszeitraum ergibt sich aus dem Anlage-Datum der Akte und dem
+Erstellungsdatum der Rechnung. <br>
+
+Eine vollst&auml;ndige Rechnung kann &uuml;ber den Link "PDF-Ausgabe"
+als PDF-Dokument mit einem lokalen PDF-Viewer ausgegeben und gedruckt
+werden.<br>
+
+&nbsp;<img alt="Rechnung als PDF" src="phpadvocat08.jpg" style="border: 1px solid ; width: 547px; height: 474px;"><br>
+
+Wurde eine Rechnung bezahlt, so k&ouml;nnen mit dem Knopf "Rechnung
+bezahlen" mehrere Aktionen druchgef&uuml;hrt werden: Zun&auml;chst wird
+das aktuelle Datum in das Feld "Bezahlt am" eingetragen. Weiterhin wird
+in das Kostenblatt der betroffenen Akte der Betrag der Rechnung
+wie auch im Buchungsjornal erg&auml;nzt. Sollte der "bezahlt"-Knopf
+versehentlich ein weiteres Mal bet&auml;tigt, so wird ein wiederholter
+Eintrag abgelehnt, da bereits das Ende-Datum gesetzt wurde.<br>
+
+<h2><a name="schriftverkehr">Schriftverkehr</a></h2>
+
+<img alt="Schriftverkehr" src="phpadvocat09.jpg" style="border: 1px solid ; width: 717px; height: 504px;"><br>
+
+Der Bereich "Schriftverkehr" verwaltet die Dokumente, die im
+Zusammenhang mit der betreffenden Akte geschrieben werden sollen. Dazu
+werden in der Zeile zur Neuanlage zun&auml;chst der Adressat wie auch
+die Vorlage ausgew&auml;hlt, mit der ein neues Schriftst&uuml;ck
+erstellt werden soll. Der Klick auf den Knopf "Neu" erzeugt
+zun&auml;chst nur ein neues Schriftst&uuml;ck, das als Eintrag in der
+Tabelle sichtbar wird. Ein Mausklick auf die vorangestellte Nummer
+&ouml;ffnet das Schriftst&uuml;ck im Editor, was nach folgendem Muster
+geschieht:<br>
+
+<img alt="Texteingabe" src="phpadvocat10.jpg" style="border: 1px solid ; width: 717px; height: 504px;"><br>
+
+Als Aufbereitungssystem wurde an dieser Stelle LaTeX verwendet, weshalb
+der Quelltext des Briefes an diese Form gebunden ist. Durch die Vorgabe
+durch die ausgew&auml;hlte Dokument-Vorlage wird jedoch lediglich der
+Schrifttext ben&ouml;tigt. Die Aufbereitung des Dokumentes erfolgt
+automatisch, wenn der Link "PDF-Ausgabe" gew&auml;hlt wird. Der
+Webserver sendet dann die generierte Datei an den Client, wo das
+Dokument mit einem PDF-Viewer betrachtet und gedruckt werden kann. <br>
+
+<img alt="Schrift als PDF" src="phpadvocat11.jpg" style="border: 1px solid ; width: 547px; height: 474px;"><br>
+
+<br>
+
+<h1><a name="adressen">Adressen</a></h1>
+
+Zwingend notwendig sind die Adressen, um mit Akten arbeiten zu
+k&ouml;nnen. Eine neue Akte kann nur dann angelegt werden, wenn eine
+vorhandene Adresse als Mandant angegeben wird. Im Zweifel kann diesen
+w&auml;hrend des Arbeitsganges zur Aktenanlage geschehen. <br>
+
+Um nun aber die Adressen bearbeiten zu k&ouml;nnen, ist das
+Adressverwaltungsmodul zust&auml;ndig. Hier werden alle Adressen in
+Listenform dargestellt oder k&ouml;nnen durch einen Einrag in der
+letzten Zeile angelegt werden. Besondere Bedeutung komt dabei dem
+Adress-Typ zu, &uuml;ber den festgelegt wird, ob es sich um eine
+Person, eine Firma oder ein Gericht handelt. Diese Eigenschaft hat
+Auswirkungen auf die Auswahlfelder, die in der Aktenverwaltung
+vorkommen.<br>
+
+<img alt="Adressen" src="phpadvocat12.jpg" style="border: 1px solid ; width: 717px; height: 504px;"><br>
+
+In der Listenform k&ouml;nnen nur die n&ouml;tigsten Eigeben gemacht
+werden, und auch nur bei der Neuanlage. F&uuml;r Ver&auml;nderungen und
+Erg&auml;nzungen kann die Detailmaske verwendet werden, die &uuml;ber
+einen Klick auf die Adressnummer erreicht wird. Auch hier m&uuml;ssen
+s&auml;mtliche &Auml;nderungen mit dem Knopf "Sichern" permanent
+gemacht werden.<br>
+
+<img alt="Adressbearbeitung" src="phpadvocat13.jpg" style="border: 1px solid ; width: 717px; height: 504px;"><br>
+
+<h1><a name="kalender">Kalender</a></h1>
+
+Die Kalender&uuml;bersicht dient zur &Uuml;bersicht &uuml;ber Termine
+zu einem Bestimmten Tag. Die einzelnen Tage der abgebildeten Monate
+sind ausw&auml;hlbar und werden gr&uuml;n hinterlegt, wenn sie aktiv
+sind. Der aktive Monat ist zudem noch am unteren Bereich mit Pfeilen
+versehen, &uuml;ber die jeweils ein Tag (einfacher Pfeil) oder ein
+Monat (Doppelpfeil) weiter oder zur&uuml;ckgesprungen werden kann. <br>
+
+Ein Termin wird immer mit einer Akte verbunden, die in der Liste als
+Ling erscheint und &uuml;ber die zu der betreffenden Akte gesprungen
+werden kann.<br>
+
+<img alt="Kalender" src="phpadvocat14.jpg" style="border: 1px solid ; width: 717px; height: 504px;"><br>
+
+<br>
+
+<h1><a name="buchhaltung">Buchhaltung</a></h1>
+
+Alle Kosten, die im laufenden Betrieb entstehen, werden zwar in den
+Kostenbl&auml;ttern mitgef&uuml;hrt, jedoch hilft das nicht, einen
+&Uuml;berblick &uuml;ber den tats&auml;chlichen Stand der Finanzen zu
+bekommen. Weiterhin werden Kosten, die nicht in Verbindung mit einer
+Akte entstehen, nicht erfasst, obgleich sie in einer
+Gewinn/Verlust-Rechnung nicht fehlen d&uuml;rfen.<br>
+
+Zu diesem Zweck existiert ein Burchhaltungsmodul, in dem jede Art von
+Finanzbewegung festgehalten werden kann. Bedingt durch das Konzept der
+Kostenbl&auml;tter muss das "Default-Konto" (Nr. 1)
+zwangsweise existieren, da bei jedem Eintrag in ein Kostenblatt nach
+Nettowert und Umsatzsteuerwert differenziert entsprechend gebucht wird.
+<br>
+
+Es k&ouml;nnen aber noch beliebig viele weitere Konten angelegt werden,
+um z.B. Geh&auml;lter, Barkasse oder andere Bereiche abdecken zu
+k&ouml;nnen. In der Kontenliste erfolgt dieses durch die Letzte Zeile,
+die &uuml;ber den Knopf "Neu" ein neues Konto erzeugt.<br>
+
+<img alt="Kontenliste" src="phpadvocat15.jpg" style="border: 1px solid ; width: 717px; height: 504px;"><br>
+
+Wird der Link "&Uuml;bersicht Kategorien" ausgew&auml;hlt, so werden
+die Kategorien als Liste angezeigt. Auch hier k&ouml;nnen einzelne
+Kategorien hinzugef&uuml;gt oder gel&ouml;scht werden.<br>
+&nbsp;<img alt="Kategorienliste" src="phpadvocat15a.jpg" style="border: 1px solid ; width: 717px; height: 504px;"><br>
+
+Ein Klick auf die Konto-Nummer in der Konten-&Uuml;bersicht f&uuml;hrt
+zur Buchungs-Maske, in
+dem ebenfalls in der letzten Zeile Buchungen hinzugef&uuml;gt werden.
+Au&szlig;er der Beschreibung (Buchungstext) muss die Kategorie muss aus
+der Liste ausgew&auml;hlt werden, um die Buchung
+korrekt zuordnen zu k&ouml;nnen.<br>
+
+Von den zwei Betr&auml;gen (Eingang und Ausgang) sollte
+normalerweise
+nur einer mit einem Wert &gt;0 gef&uuml;llt werden. Negative Werte oder
+Werte in beiden Feldern sind un&uuml;bersichtlich und f&uuml;hren
+leicht zu falschen Ergebnissen. <br>
+
+Jede Zeile und jede Spalte&nbsp; wird zur &Uuml;bersicht nochmals mit
+einer Gesamtsumme bewertet und der Endwert berechtnet.<br>
+
+<img alt="Buchungen" src="phpadvocat16.jpg" style="border: 1px solid ; width: 717px; height: 504px;"><br>
+
+Im unteren Teil k&ouml;nnen Umbuchungen durchgef&uuml;hrt werden, deren
+Zweck darin besteht, dass ein Betrag Bilanzneutral&nbsp; von dem
+angezeigten Konto zu einem anderen &uuml;bertagen wird. Dabei werden
+automatisch 2 Buchungen durchgef&uuml;hrt: <br>
+
+<ul>
+
+  <li>Abbuchung von dem aktuellen Konto</li>
+
+  <li>Zubuchung zu dem angegebenen Konto</li>
+
+</ul>
+
+In beiden wird die angegebene Beschreibung eingetragen,so dass der
+Zusammenhang beider Buchungen nachvollzogen werden kann.<br>
+
+<br>
+
+<h1><a name="serverschema">Server-Schema</a></h1>
+
+<img alt="Architektur" src="phpadvocat-architecture-small.jpg" style="border: 1px solid ; width: 805px; height: 559px;"><br>
+
+<h1><a name="erd">Entity-Relationship-Diagramm</a></h1>
+
+<img alt="ERD" src="phpadvocat-erd.jpg" style="border: 1px solid ;"><br>
+
+<br>
+
+</body>
+</html>

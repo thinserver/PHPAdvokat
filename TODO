@@ -1,0 +1,4 @@
+- implement a trasnaction mechanism to prevent irritations pushing the
+  "back" Button
+- add a administration tool (create user, define language etc.)
+- integration into another project (e.g. phpgroupware, phproject ... )

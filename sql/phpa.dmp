@@ -1,0 +1,1896 @@
+--
+-- PostgreSQL database dump
+--
+
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = off;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+SET escape_string_warning = off;
+
+SET search_path = public, pg_catalog;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- Name: phpa_accounts; Type: TABLE; Schema: public; Owner: burkhard; Tablespace: 
+--
+
+CREATE TABLE phpa_accounts (
+    number integer NOT NULL,
+    description character varying(40)
+);
+
+
+ALTER TABLE public.phpa_accounts OWNER TO burkhard;
+
+--
+-- Name: phpa_accounts_number_seq; Type: SEQUENCE; Schema: public; Owner: burkhard
+--
+
+CREATE SEQUENCE phpa_accounts_number_seq
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.phpa_accounts_number_seq OWNER TO burkhard;
+
+--
+-- Name: phpa_accounts_number_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: burkhard
+--
+
+ALTER SEQUENCE phpa_accounts_number_seq OWNED BY phpa_accounts.number;
+
+
+--
+-- Name: phpa_accounts_number_seq; Type: SEQUENCE SET; Schema: public; Owner: burkhard
+--
+
+SELECT pg_catalog.setval('phpa_accounts_number_seq', 2, true);
+
+
+--
+-- Name: phpa_amounts; Type: TABLE; Schema: public; Owner: burkhard; Tablespace: 
+--
+
+CREATE TABLE phpa_amounts (
+    number integer NOT NULL,
+    createdate date,
+    transaction integer,
+    exp_category integer DEFAULT 1 NOT NULL,
+    exp_account integer DEFAULT 1 NOT NULL,
+    description character varying(100),
+    incomingamount numeric(10,2) DEFAULT 0.0,
+    outgoingamount numeric(10,2) DEFAULT 0.0
+);
+
+
+ALTER TABLE public.phpa_amounts OWNER TO burkhard;
+
+--
+-- Name: phpa_amounts_number_seq; Type: SEQUENCE; Schema: public; Owner: burkhard
+--
+
+CREATE SEQUENCE phpa_amounts_number_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.phpa_amounts_number_seq OWNER TO burkhard;
+
+--
+-- Name: phpa_amounts_number_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: burkhard
+--
+
+ALTER SEQUENCE phpa_amounts_number_seq OWNED BY phpa_amounts.number;
+
+
+--
+-- Name: phpa_amounts_number_seq; Type: SEQUENCE SET; Schema: public; Owner: burkhard
+--
+
+SELECT pg_catalog.setval('phpa_amounts_number_seq', 1, false);
+
+
+--
+-- Name: phpa_config; Type: TABLE; Schema: public; Owner: burkhard; Tablespace: 
+--
+
+CREATE TABLE phpa_config (
+    number integer NOT NULL,
+    title character varying(10),
+    name character varying(30),
+    prename character varying(30),
+    organization character varying(30),
+    street character varying(30),
+    zip character varying(7),
+    city character varying(30),
+    phone character varying(30),
+    fax character varying(30),
+    email character varying(40),
+    language character varying(5),
+    bank character varying(100),
+    bank_id character varying(15),
+    account character varying(20),
+    vat_id character varying(40),
+    vat_percent numeric(10,2),
+    filebase character varying(200)
+);
+
+
+ALTER TABLE public.phpa_config OWNER TO burkhard;
+
+--
+-- Name: phpa_config_number_seq; Type: SEQUENCE; Schema: public; Owner: burkhard
+--
+
+CREATE SEQUENCE phpa_config_number_seq
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.phpa_config_number_seq OWNER TO burkhard;
+
+--
+-- Name: phpa_config_number_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: burkhard
+--
+
+ALTER SEQUENCE phpa_config_number_seq OWNED BY phpa_config.number;
+
+
+--
+-- Name: phpa_config_number_seq; Type: SEQUENCE SET; Schema: public; Owner: burkhard
+--
+
+SELECT pg_catalog.setval('phpa_config_number_seq', 1, true);
+
+
+--
+-- Name: phpa_events; Type: TABLE; Schema: public; Owner: burkhard; Tablespace: 
+--
+
+CREATE TABLE phpa_events (
+    number integer NOT NULL,
+    pfile integer,
+    eventstart timestamp without time zone,
+    eventend timestamp without time zone,
+    description character varying(50),
+    location character varying(50)
+);
+
+
+ALTER TABLE public.phpa_events OWNER TO burkhard;
+
+--
+-- Name: phpa_events_number_seq; Type: SEQUENCE; Schema: public; Owner: burkhard
+--
+
+CREATE SEQUENCE phpa_events_number_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.phpa_events_number_seq OWNER TO burkhard;
+
+--
+-- Name: phpa_events_number_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: burkhard
+--
+
+ALTER SEQUENCE phpa_events_number_seq OWNED BY phpa_events.number;
+
+
+--
+-- Name: phpa_events_number_seq; Type: SEQUENCE SET; Schema: public; Owner: burkhard
+--
+
+SELECT pg_catalog.setval('phpa_events_number_seq', 1, false);
+
+
+--
+-- Name: phpa_exp_categories; Type: TABLE; Schema: public; Owner: burkhard; Tablespace: 
+--
+
+CREATE TABLE phpa_exp_categories (
+    number integer NOT NULL,
+    description character varying(40)
+);
+
+
+ALTER TABLE public.phpa_exp_categories OWNER TO burkhard;
+
+--
+-- Name: phpa_expenditures; Type: TABLE; Schema: public; Owner: burkhard; Tablespace: 
+--
+
+CREATE TABLE phpa_expenditures (
+    number integer NOT NULL,
+    pfile integer,
+    createdate date,
+    expendituretype integer,
+    exp_category integer DEFAULT 1 NOT NULL,
+    description character varying(100),
+    amount integer,
+    vatamount integer
+);
+
+
+ALTER TABLE public.phpa_expenditures OWNER TO burkhard;
+
+--
+-- Name: phpa_expenditures_number_seq; Type: SEQUENCE; Schema: public; Owner: burkhard
+--
+
+CREATE SEQUENCE phpa_expenditures_number_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.phpa_expenditures_number_seq OWNER TO burkhard;
+
+--
+-- Name: phpa_expenditures_number_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: burkhard
+--
+
+ALTER SEQUENCE phpa_expenditures_number_seq OWNED BY phpa_expenditures.number;
+
+
+--
+-- Name: phpa_expenditures_number_seq; Type: SEQUENCE SET; Schema: public; Owner: burkhard
+--
+
+SELECT pg_catalog.setval('phpa_expenditures_number_seq', 1, false);
+
+
+--
+-- Name: phpa_expendituretypes; Type: TABLE; Schema: public; Owner: burkhard; Tablespace: 
+--
+
+CREATE TABLE phpa_expendituretypes (
+    number integer NOT NULL,
+    description character varying(50),
+    category integer,
+    vat numeric(4,1),
+    vat_category integer
+);
+
+
+ALTER TABLE public.phpa_expendituretypes OWNER TO burkhard;
+
+--
+-- Name: phpa_expendituretypes_number_seq; Type: SEQUENCE; Schema: public; Owner: burkhard
+--
+
+CREATE SEQUENCE phpa_expendituretypes_number_seq
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.phpa_expendituretypes_number_seq OWNER TO burkhard;
+
+--
+-- Name: phpa_expendituretypes_number_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: burkhard
+--
+
+ALTER SEQUENCE phpa_expendituretypes_number_seq OWNED BY phpa_expendituretypes.number;
+
+
+--
+-- Name: phpa_expendituretypes_number_seq; Type: SEQUENCE SET; Schema: public; Owner: burkhard
+--
+
+SELECT pg_catalog.setval('phpa_expendituretypes_number_seq', 4, true);
+
+
+--
+-- Name: phpa_invoicepos; Type: TABLE; Schema: public; Owner: burkhard; Tablespace: 
+--
+
+CREATE TABLE phpa_invoicepos (
+    number integer NOT NULL,
+    invoice integer,
+    invoicetype integer,
+    chargefactor numeric(10,2),
+    amount numeric(10,2),
+    vat numeric(10,2)
+);
+
+
+ALTER TABLE public.phpa_invoicepos OWNER TO burkhard;
+
+--
+-- Name: phpa_invoicepos_number_seq; Type: SEQUENCE; Schema: public; Owner: burkhard
+--
+
+CREATE SEQUENCE phpa_invoicepos_number_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.phpa_invoicepos_number_seq OWNER TO burkhard;
+
+--
+-- Name: phpa_invoicepos_number_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: burkhard
+--
+
+ALTER SEQUENCE phpa_invoicepos_number_seq OWNED BY phpa_invoicepos.number;
+
+
+--
+-- Name: phpa_invoicepos_number_seq; Type: SEQUENCE SET; Schema: public; Owner: burkhard
+--
+
+SELECT pg_catalog.setval('phpa_invoicepos_number_seq', 1, false);
+
+
+--
+-- Name: phpa_invoices; Type: TABLE; Schema: public; Owner: burkhard; Tablespace: 
+--
+
+CREATE TABLE phpa_invoices (
+    number integer NOT NULL,
+    pfile integer,
+    address integer,
+    pfilevalue numeric(10,2),
+    charge numeric(10,2),
+    invoicetext text,
+    createdate date,
+    paydate date
+);
+
+
+ALTER TABLE public.phpa_invoices OWNER TO burkhard;
+
+--
+-- Name: phpa_invoices_number_seq; Type: SEQUENCE; Schema: public; Owner: burkhard
+--
+
+CREATE SEQUENCE phpa_invoices_number_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.phpa_invoices_number_seq OWNER TO burkhard;
+
+--
+-- Name: phpa_invoices_number_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: burkhard
+--
+
+ALTER SEQUENCE phpa_invoices_number_seq OWNED BY phpa_invoices.number;
+
+
+--
+-- Name: phpa_invoices_number_seq; Type: SEQUENCE SET; Schema: public; Owner: burkhard
+--
+
+SELECT pg_catalog.setval('phpa_invoices_number_seq', 1, false);
+
+
+--
+-- Name: phpa_invoicetypes; Type: TABLE; Schema: public; Owner: burkhard; Tablespace: 
+--
+
+CREATE TABLE phpa_invoicetypes (
+    number integer NOT NULL,
+    description character varying(60),
+    charge numeric(17,2),
+    amount_category integer,
+    vat_percent numeric(10,2),
+    vat_category integer
+);
+
+
+ALTER TABLE public.phpa_invoicetypes OWNER TO burkhard;
+
+--
+-- Name: phpa_invoicetypes_number_seq; Type: SEQUENCE; Schema: public; Owner: burkhard
+--
+
+CREATE SEQUENCE phpa_invoicetypes_number_seq
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.phpa_invoicetypes_number_seq OWNER TO burkhard;
+
+--
+-- Name: phpa_invoicetypes_number_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: burkhard
+--
+
+ALTER SEQUENCE phpa_invoicetypes_number_seq OWNED BY phpa_invoicetypes.number;
+
+
+--
+-- Name: phpa_invoicetypes_number_seq; Type: SEQUENCE SET; Schema: public; Owner: burkhard
+--
+
+SELECT pg_catalog.setval('phpa_invoicetypes_number_seq', 14, true);
+
+
+--
+-- Name: phpa_partner; Type: TABLE; Schema: public; Owner: burkhard; Tablespace: 
+--
+
+CREATE TABLE phpa_partner (
+    number integer NOT NULL,
+    type character varying(10),
+    title character varying(10),
+    name character varying(30),
+    prename character varying(30),
+    organization character varying(30),
+    street character varying(30),
+    zip character varying(7),
+    city character varying(30),
+    phone character varying(30),
+    fax character varying(30),
+    email character varying(40)
+);
+
+
+ALTER TABLE public.phpa_partner OWNER TO burkhard;
+
+--
+-- Name: phpa_partner_number_seq; Type: SEQUENCE; Schema: public; Owner: burkhard
+--
+
+CREATE SEQUENCE phpa_partner_number_seq
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.phpa_partner_number_seq OWNER TO burkhard;
+
+--
+-- Name: phpa_partner_number_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: burkhard
+--
+
+ALTER SEQUENCE phpa_partner_number_seq OWNED BY phpa_partner.number;
+
+
+--
+-- Name: phpa_partner_number_seq; Type: SEQUENCE SET; Schema: public; Owner: burkhard
+--
+
+SELECT pg_catalog.setval('phpa_partner_number_seq', 3, true);
+
+
+--
+-- Name: phpa_partnertypes; Type: TABLE; Schema: public; Owner: burkhard; Tablespace: 
+--
+
+CREATE TABLE phpa_partnertypes (
+    type character varying(10)
+);
+
+
+ALTER TABLE public.phpa_partnertypes OWNER TO burkhard;
+
+--
+-- Name: phpa_pfiles; Type: TABLE; Schema: public; Owner: burkhard; Tablespace: 
+--
+
+CREATE TABLE phpa_pfiles (
+    number integer NOT NULL,
+    processregister character(10),
+    value numeric(17,2),
+    subject character varying(50),
+    partner integer,
+    opposing integer,
+    court integer,
+    createdate date,
+    enddate date,
+    comment character varying(512)
+);
+
+
+ALTER TABLE public.phpa_pfiles OWNER TO burkhard;
+
+--
+-- Name: phpa_pfiles_number_seq; Type: SEQUENCE; Schema: public; Owner: burkhard
+--
+
+CREATE SEQUENCE phpa_pfiles_number_seq
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.phpa_pfiles_number_seq OWNER TO burkhard;
+
+--
+-- Name: phpa_pfiles_number_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: burkhard
+--
+
+ALTER SEQUENCE phpa_pfiles_number_seq OWNED BY phpa_pfiles.number;
+
+
+--
+-- Name: phpa_pfiles_number_seq; Type: SEQUENCE SET; Schema: public; Owner: burkhard
+--
+
+SELECT pg_catalog.setval('phpa_pfiles_number_seq', 2, true);
+
+
+--
+-- Name: phpa_rvgcharges; Type: TABLE; Schema: public; Owner: burkhard; Tablespace: 
+--
+
+CREATE TABLE phpa_rvgcharges (
+    rvgvalue numeric(12,2),
+    rvgcharge numeric(12,2)
+);
+
+
+ALTER TABLE public.phpa_rvgcharges OWNER TO burkhard;
+
+--
+-- Name: phpa_transactions; Type: TABLE; Schema: public; Owner: burkhard; Tablespace: 
+--
+
+CREATE TABLE phpa_transactions (
+    number integer NOT NULL
+);
+
+
+ALTER TABLE public.phpa_transactions OWNER TO burkhard;
+
+--
+-- Name: number; Type: DEFAULT; Schema: public; Owner: burkhard
+--
+
+ALTER TABLE phpa_accounts ALTER COLUMN number SET DEFAULT nextval('phpa_accounts_number_seq'::regclass);
+
+
+--
+-- Name: number; Type: DEFAULT; Schema: public; Owner: burkhard
+--
+
+ALTER TABLE phpa_amounts ALTER COLUMN number SET DEFAULT nextval('phpa_amounts_number_seq'::regclass);
+
+
+--
+-- Name: number; Type: DEFAULT; Schema: public; Owner: burkhard
+--
+
+ALTER TABLE phpa_config ALTER COLUMN number SET DEFAULT nextval('phpa_config_number_seq'::regclass);
+
+
+--
+-- Name: number; Type: DEFAULT; Schema: public; Owner: burkhard
+--
+
+ALTER TABLE phpa_events ALTER COLUMN number SET DEFAULT nextval('phpa_events_number_seq'::regclass);
+
+
+--
+-- Name: number; Type: DEFAULT; Schema: public; Owner: burkhard
+--
+
+ALTER TABLE phpa_expenditures ALTER COLUMN number SET DEFAULT nextval('phpa_expenditures_number_seq'::regclass);
+
+
+--
+-- Name: number; Type: DEFAULT; Schema: public; Owner: burkhard
+--
+
+ALTER TABLE phpa_expendituretypes ALTER COLUMN number SET DEFAULT nextval('phpa_expendituretypes_number_seq'::regclass);
+
+
+--
+-- Name: number; Type: DEFAULT; Schema: public; Owner: burkhard
+--
+
+ALTER TABLE phpa_invoicepos ALTER COLUMN number SET DEFAULT nextval('phpa_invoicepos_number_seq'::regclass);
+
+
+--
+-- Name: number; Type: DEFAULT; Schema: public; Owner: burkhard
+--
+
+ALTER TABLE phpa_invoices ALTER COLUMN number SET DEFAULT nextval('phpa_invoices_number_seq'::regclass);
+
+
+--
+-- Name: number; Type: DEFAULT; Schema: public; Owner: burkhard
+--
+
+ALTER TABLE phpa_invoicetypes ALTER COLUMN number SET DEFAULT nextval('phpa_invoicetypes_number_seq'::regclass);
+
+
+--
+-- Name: number; Type: DEFAULT; Schema: public; Owner: burkhard
+--
+
+ALTER TABLE phpa_partner ALTER COLUMN number SET DEFAULT nextval('phpa_partner_number_seq'::regclass);
+
+
+--
+-- Name: number; Type: DEFAULT; Schema: public; Owner: burkhard
+--
+
+ALTER TABLE phpa_pfiles ALTER COLUMN number SET DEFAULT nextval('phpa_pfiles_number_seq'::regclass);
+
+
+--
+-- Data for Name: phpa_accounts; Type: TABLE DATA; Schema: public; Owner: burkhard
+--
+
+COPY phpa_accounts (number, description) FROM stdin;
+1	Betriebskonto
+2	Barkasse
+\.
+
+
+--
+-- Data for Name: phpa_amounts; Type: TABLE DATA; Schema: public; Owner: burkhard
+--
+
+COPY phpa_amounts (number, createdate, transaction, exp_category, exp_account, description, incomingamount, outgoingamount) FROM stdin;
+\.
+
+
+--
+-- Data for Name: phpa_config; Type: TABLE DATA; Schema: public; Owner: burkhard
+--
+
+COPY phpa_config (number, title, name, prename, organization, street, zip, city, phone, fax, email, language, bank, bank_id, account, vat_id, vat_percent, filebase) FROM stdin;
+1	Frau	Duck	Daisy	Rechtsanwaltskanzlei	Bahnhofstr. 12	12344	Entenhausen	\N	\N	\N	DE	\N	\N	\N	\N	\N	\N
+\.
+
+
+--
+-- Data for Name: phpa_events; Type: TABLE DATA; Schema: public; Owner: burkhard
+--
+
+COPY phpa_events (number, pfile, eventstart, eventend, description, location) FROM stdin;
+\.
+
+
+--
+-- Data for Name: phpa_exp_categories; Type: TABLE DATA; Schema: public; Owner: burkhard
+--
+
+COPY phpa_exp_categories (number, description) FROM stdin;
+1	Ausstehende Einlage nicht eingefordert
+40	Ausstehende Einlage eingefordert
+70	Ausstehende Einlage Kommanditkapital
+95	Ingangsetzungs- und Erweiterungsaufwand
+100	Konzessionen und gewerbl.Schutzrechte
+110	Konzessionen
+120	Gewerbliche Schutzrechte
+135	EDV-Software
+140	Lizenzen an gewerblichen Schutzrechten
+160	Verschmelzungsmehrwert
+170	Anzahlungen immaterielle VermG
+250	Fabrikbauten
+260	Andere Bauten
+270	Garagen
+285	Hof- und Wegebefestigungen
+290	Einrichtung Fabrik- und andere Bauten
+300	Wohnbauten
+305	Garagen
+315	Hof- und Wegebefestigungen
+350	Fabrikbauten
+360	Wohnbauten
+370	Andere Bauten
+380	Garagen
+395	Hof- und Wegebefestigungen
+400	Technische Anlagen und Maschinen
+420	Technische Anlagen
+440	Maschinen
+460	Maschinengebundene Werkzeuge
+470	Betriebsvorrichtungen
+510	Andere Anlagen
+520	PKW
+540	LKW
+560	Sonstige Transportmittel
+620	Werkzeuge
+640	Ladeneinrichtung
+670	GWG bis 410 Euro
+690	Sonstige Betriebs-u.Gesch.ausstattung
+700	Geleistete Anzahlungen u.Anlagen im Bau
+725	Wohnbauten im Bau
+735	Anzahlg. auf Wohnbauten a.eig.Grundst
+755	Wohnbauten im Bau
+765	Anzahlungen a. Wohnbauten a. fremd. Gr.
+770	Technische Anlagen und Maschinen im Bau
+780	Anzahlungen auf technische Anlagen
+785	Betriebs- u. Gesch.ausstattung im Bau
+795	Anzahlung Betriebs- u. Gesch.ausstattung
+800	Anteile an verbundenen Unternehmen
+809	Anteile a.herrschender Gesellschaft
+810	Ausleihungen an verbundene Unternehmen
+820	Beteiligungen
+830	Typisch stille Beteiligungen
+840	Atypische stille Beteiligungen
+850	Andere Beteiligungen an Kapitalges.
+860	Andere Beteiligungen an Personenges.
+880	Ausleih. an UN mit Beteiligungsverh.
+920	Festverzinsliche Wertpapiere
+930	Sonstige Ausleihungen
+940	Darlehen
+960	Ausleihungen an Gesellschafter
+970	Ausleihungen an nahe stehende Personen
+980	Genossenschaftsanteile z.lfr.Verbleib
+1000	Roh-, Hilfs- und Betriebsstoffe
+1040	Unfertige Erzeugnisse und Leistungen
+1050	Unfertige Erzeugnisse
+1080	Unfertige Leistungen
+1100	Fertige Erzeugnisse und Waren
+1110	Fertige Erzeugnisse
+1140	Waren
+1181	Geleistete Anzahlungen 7% Vorsteuer
+1184	Geleistete Anzahlungen 16% Vorsteuer
+1185	Geleistete Anzahlungen 19% Vorsteuer
+1190	Erhaltene Anzahlungen auf Bestellungen
+1200	Forderungen aus Lieferungen u.Leistung
+1201	Forderungen aus Lieferungen u.Leistung
+1210	Forderungen aus Lieferungen u.Leistung
+1215	Forderungen aus L+L allgem. Steuersatz
+1217	Forderg. aus stfr., n. steuerbaren L+L
+1219	Gegenkto Aufteilung der Forderungen L+L
+1221	Forderg.a. Lieferungen/Leistungen b.1 J
+1225	Forderg.a. Lieferungen/Leistungen g.1 J
+1230	Wechsel aus Lieferung und Leistung
+1231	Wechsel a. Lieferungen/Leistungen b.1 J
+1232	Wechsel a. Lieferungen/Leistungen g.1 J
+1235	Wechsel a. Lieferungen/Leistungen bbf.
+1240	Zweifelhafte Forderungen
+1241	Zweifelhafte Forderungen (bis 1 Jahr)
+1245	Zweifelhafte Forderungen (g. 1 Jahr)
+1246	Einzelwertberichtigung Forderung(b.1J)
+1247	Einzelwertberichtigung Forderung(g.1J)
+1248	Pauschalwertberichtigung Forderg./b.1J
+1249	Pauschalwertberichtigung Forderg./g.1J
+1250	Forderungen aus L+L gg. Gesellschafter
+1251	Forderg. aus L+L gg.Gesellschafter b.1 J
+1255	Forderg. aus L+L gg.Gesellschafter g.1 J
+1258	Gegenkonto sonst.VG bei Buchung Debitor
+1259	Gegenkonto bei Aufteilung Debitoren
+1260	Forderungen gegen verbund.Unternehmen
+1261	Forderungen gg. verbundene UN(b. 1 J)
+1265	Forderungen gg. verbundene UN(g. 1 J)
+1266	Besitzwechsel gegen verbund. Unternehmen
+1267	Besitzwechsel gegen verbundene UN (b.1J)
+1268	Besitzwechsel gegen verbundene UN (g.1J)
+1270	Forderungen aus L+L gg. verbundene UN
+1271	Forderungen aus L+L gg. verbund. UN b.1J
+1275	Forderungen aus L+L gg. verbund. UN g.1J
+1276	WB Forderungen gg. verbundene UN (b.1J)
+1277	WB Forderungen gg. verbundene UN (g.1J)
+1280	Forderungen gg. UN m. Beteiligungsverh.
+1281	Forderg. gg. UN mit Beteiligg.verh. b.1J
+1285	Forderg. gg. UN mit Beteiligg.verh. g.1J
+1286	Besitzwechsel gg.UN m. Beteiligungsverh.
+1287	Besitzwechsel gg.UN m.Beteiligg.verh.b1J
+1288	Besitzwechsel gg.UN m.Beteiligg.verh.g1J
+1289	Besitzwechsel gg.UN m.Beteiligg.verh.bbf
+1290	Forderg. L+L gg.UN m. Beteiligungsverh.
+1291	Forderg. L+L gg.UN m.Beteiligg.verh.b1J
+1295	Forderg. L+L gg.UN m.Beteiligg.verh.g1J
+1296	WB Forderg.gg.UN m.Beteiligg.verh. b.1J
+1297	WB Forderg.gg.UN m.Beteiligg.verh. g.1J
+1298	Ausstehende Einlage eingefordert
+1320	Ford.geg.Aufsichtsrats-u.Beirats-Mitgl
+1321	Forderungen gg. Aufsichtsratsm. (b.1 J)
+1325	Forderungen gg. Aufsichtsratsm. (g.1 J)
+1330	Forderungen gegen Gesellschafter
+1331	Forderungen gg. Gesellschafter (b.1J)
+1335	Forderungen gg. Gesellschafter (g.1J)
+1340	Forderg. gg. Personal Lohn- und Gehalt
+1341	Forderungen gegen Personal (bis 1Jahr)
+1345	Forderungen gegen Personal (g. 1Jahr)
+1350	Kautionen
+1351	Kautionen (bis 1 J)
+1355	Kautionen (g. 1 J)
+1360	Darlehen
+1361	Darlehen bis 1 Jahr
+1365	Darlehen g. 1 Jahr
+1370	Durchlaufende Posten
+1374	Fremdgeld
+1375	Agenturwarenabrechnung
+1390	GmbH-Anteile z.kurzfristigen Verbleib
+1395	Genossenschaftsanteile z.kfr.Verbleib
+1400	Abziehbare Vorsteuer
+1401	Abziehbare Vorsteuer 7%
+1402	Abziehbare Vorsteuer aus EG-Erwerb
+1403	Abziehbare Vorsteuer aus EG-Erwerb 16%
+1405	Abziehbare Vorsteuer 16%
+1406	Abziehbare Vorsteuer 19%
+1410	Aufzuteilende Vorsteuer
+1411	Aufzuteilende Vorsteuer 7%
+1412	Aufzuteilende Vorsteuer aus EG-Erwerb
+1415	Aufzuteilende Vorsteuer 16%
+1420	USt-Forderungen
+1421	USt-Forderungen laufendes Jahr
+1422	USt-Forderungen Vorjahr
+1427	Forderungen aus Verbrauchsteuern
+1432	Vorsteuer EG-Erwerb neue Kfz ohne UStID
+1433	Bezahlte Einfuhr-Umsatzsteuer
+1434	Vorsteuer im Folgejahr abziehbar
+1440	Steuererst.anspruch gegen ander. EG-Land
+1460	Geldtransit
+1490	Verrechnung Ist-Versteuerung
+1495	Verrechnung erhaltene Anzahlungen
+1500	Anteile an verbundenen Unternehmen
+1504	Anteile a.herrschender Gesellschaft
+1505	Eigene Anteile
+1510	Sonstige Wertpapiere
+1520	Finanzwechsel
+1525	Wertpap. mit geringen Wertschwankungen
+1530	Wertpapieranlagen kurzfr. Disposition
+1550	Schecks
+1600	Kasse
+1610	Nebenkasse 1
+1620	Nebenkasse 2
+1700	Postbank
+1710	Postbank 1
+1720	Postbank 2
+1730	Postbank 3
+1780	LZB-Guthaben
+1790	Bundesbankguthaben
+1800	Bank
+1810	Bank 1
+1820	Bank 2
+1830	Bank 3
+1840	Bank 4
+1850	Bank 5
+1890	Finanzmittelanlagen kurzfr. Disposition
+1900	Aktive Rechnungsabgrenzung
+1930	Aufwand Umsatzsteuer auf Anzahlungen
+1940	Damnum/Disagio
+1950	Abgrenzung aktive latente Steuern
+2000	Festkapital
+2010	Variables Kapital
+2020	Gesellschafter-Darlehen
+2050	Kommandit-Kapital
+2060	Verlustausgleich
+2070	Gesellschafter-Darlehen
+2100	Privatentnahmen allgemein
+2130	Unentgeltliche Wertabgaben
+2150	Privatsteuern
+2180	Privateinlagen
+2250	Zuwendungen, Spenden
+2500	Privatentnahmen allgemein
+2530	Unentgeltliche Wertabgaben
+2550	Privatsteuern
+2580	Privateinlagen
+2650	Zuwendungen, Spenden
+2900	Gezeichnetes Kapital
+2910	Ausstehende Einlage nicht eingefordert
+2928	Andere Zuzahlungen in das Eigenkapital
+2929	Eingefordertes Nachschusskapital
+2962	Eigenkapitalanteil von Wertaufholungen
+2970	Gewinnvortrag vor Verwendung
+2974	Gewinnvortrag (stl. Einlagekonto)
+2976	Gewinnvortrag  0% Vorbelastung EK02
+2978	Verlustvortrag vor Verwendung
+2979	Vortrag auf neue Rechnung (Bilanz)
+3100	Anleihen, nicht konvertibel
+3101	Anleihen, nicht konvertibel (b. 1 Jahr)
+3105	Anleihen, nicht konvertibel (1-5 Jahre)
+3110	Anleihen, nicht konvertibel (g.5 Jahre)
+3120	Anleihen konvertibel
+3121	Anleihen konvertibel(bis 1 Jahr)
+3125	Anleihen konvertibel(1-5 Jahre)
+3150	Verbindlichkeiten gg. Kreditinstituten
+3151	Verbindlichkeiten Kreditinstitut(b.1J)
+3160	Verbindlichkeiten Kreditinstitut(1-5J)
+3170	Verbindlichkeiten Kreditinstitut(g.5J)
+3180	TZ-Verbindlichkeit. gg. Kreditinstituten
+3181	TZ-Verbindlichkeit. Kreditinstitut(b.1J)
+3190	TZ-Verbindlichkeit. Kreditinstitut(1-5J)
+3200	TZ-Verbindlichkeit. Kreditinstitut(g.5J)
+3249	Gegenkonto bei Aufteilung Kto 3210-48
+3250	Erhalt.Anzahlungen auf Bestellungen
+3260	Erhaltene Anzahlungen 7% USt
+3270	Erhaltene Anzahlungen 16% USt
+3271	Erhaltene Anzahlungen 19% USt
+33280	Erhaltene Anzahlungen (bis 1 Jahr)
+3284	Erhaltene Anzahlungen (1-5 Jahre)
+3285	Erhaltene Anzahlungen (g. 5 Jahre)
+3300	Verbindl. aus Lieferungen u. Leistungen
+3301	Verbindl. aus Lieferungen u. Leistungen
+3305	Verbindl. aus L+L allgem. Steuersatz
+3307	Verbindl. aus L+L ohne Vorsteuerabzug
+3309	Gegenkto Aufteilung Verbindlichk. L+L
+3310	Verbindl. aus Lieferungen u. Leistungen
+3335	Verbindl.a.Lieferungen/Leistungen b.1 J
+3337	Verbindl.a.Lieferungen/Leistungen 1-5 J
+3338	Verbindl.a.Lieferungen/Leistungen g.5 J
+3340	Verbindl. aus L+L gg. Gesellschaftern
+3341	Verbindl. aus L+L gg. Gesellsch. b. 1J
+3345	Verbindl. aus L+L gg. Gesellsch. 1-5 J
+3348	Verbindl. aus L+L gg. Gesellsch. g. 5J
+3349	Gegenkonto bei Aufteilung Kreditoren
+3350	Wechselverbindlichkeiten
+3351	Wechselverbindlichkeiten (bis 1 Jahr)
+3380	Wechselverbindlichkeiten (1-5 Jahre)
+3390	Wechselverbindlichkeiten (g. 5 Jahre)
+3401	Verbindlichkeit. gg.verbundene UN(b.1 J)
+3405	Verbindlichkeit. gg.verbundene UN(1-5 J)
+3410	Verbindlichkeit. gg.verbundene UN(g.5 J)
+3420	Verbindl. aus L+L gg. verbundenen UN
+3421	Verbindl.aus L+L gg.verbundenen UN b. 1J
+3425	Verbindl.aus L+L gg.verbundenen UN 1-5 J
+3430	Verbindl.aus L+L gg.verbundenen UN g.5 J
+3450	Verbindl. gg.UN mit Beteiligungsverh.
+3451	Verbindl. gg.UN mit Beteiligg.verh. b.1J
+3455	Verbindl. gg.UN mit Beteiligg.verh. 1-5J
+3460	Verbindl. gg.UN mit Beteiligg.verh. g.5J
+3470	Verbindl.aus L+L gg.UN m.Beteiligg.verh.
+3471	Verbindl.aus L+L gg.UN m. Bet.verh. b.1J
+3475	Verbindl.aus L+L gg.UN m. Bet.verh. 1-5J
+3480	Verbindl.aus L+L gg.UN m. Bet.verh. g.5J
+3500	Sonstige Verbindlichkeiten
+3501	Sonstige Verbindlichkeiten (bis 1 J)
+3504	Sonstige Verbindlichkeiten (1-5 J)
+3507	Sonstige Verbindlichkeiten (g. 5 J)
+3510	Verbindlichkeit.gg. Gesellschaftern
+3511	Verbindlichkeit.gg. Gesellschaftern b.1J
+3514	Verbindlichkeit.gg. Gesellschaftern 1-5J
+3517	Verbindlichkeit.gg. Gesellschaftern g.5J
+3520	Darlehen typ. stiller Gesellschafter
+3521	Darlehen typ. stiller Gesellsch.(b.1J)
+3524	Darlehen typ. stiller Gesellsch.(1-5J)
+3527	Darlehen typ. stiller Gesellsch.(g.5J)
+3530	Darlehen atyp. stiller Gesellschafter
+3531	Darlehen atyp. stiller Gesellsch.(b.1J)
+3534	Darlehen atyp. stiller Gesellsch.(1-5J)
+3537	Darlehen atyp. stiller Gesellsch.(g.5J)
+3540	Partiarische Darlehen
+3541	Partiarische Darlehen(bis 1 Jahr)
+3544	Partiarische Darlehen(1-5 Jahre)
+3547	Partiarische Darlehen(g. 5 Jahre)
+3550	Erhaltene Kautionen
+3551	Erhaltene Kautionen (bis 1 Jahr)
+3554	Erhaltene Kautionen (1-5 Jahre)
+3560	Darlehen
+3561	Darlehen bis 1 Jahr
+3564	Darlehen 1-5 Jahre
+3567	Darlehen g. 5 Jahre
+3599	Gegenkonto Aufteilung der Darlehen
+3600	Agenturwarenabrechnung
+3610	Kreditkartenabrechnung
+3630	Sonstige Verrechnung
+3695	Verrechnung geleistete Anzahlungen
+3700	Verbindl. Betriebssteuern und -abgaben
+3701	Verbindl.Betriebsst.und -abgaben (b.1 J)
+3710	Verbindl.Betriebsst.und -abgaben (1-5 J)
+3715	Verbindl.Betriebsst.und -abgaben (g.5 J)
+3720	Verbindlichkeiten aus Lohn und Gehalt
+3725	Verbindlichk. Einbehaltung Arbeitnehmer
+3730	Verbindlichk. Lohn- und Kirchensteuer
+3740	Verbindlichkeiten soziale Sicherheit
+3741	Verbindlichk. soziale Sicherheit(b.1J)
+3750	Verbindlichk. soziale Sicherheit(1-5J)
+3755	Verbindlichk. soziale Sicherheit(g.5J)
+3760	Verbindlichk. a.Einbehaltung (KapESt)
+3790	Lohn- und Gehaltsverrechnungen
+3800	Umsatzsteuer
+3801	Umsatzsteuer 7%
+3802	Umsatzsteuer aus EG-Erwerb
+3803	Umsatzsteuer aus EG-Erwerb 16%
+3805	Umsatzsteuer 16%
+3806	Umsatzsteuer 19%
+3807	Umsatzsteuer EG-Lieferungen
+3809	USt aus EG-Erwerb ohne Vorsteuerabzug
+3817	USt im anderen EG-Land stpfl.Lieferung
+3818	USt im anderen EG-Land s.Leist./Werkl.
+3820	Umsatzsteuervorauszahlungen
+3830	Umsatzsteuervorauszahlungen 1/11
+3832	Nachsteuer
+3834	USt EG-Erwerb Neufahrzeuge ohne UStID
+3840	Umsatzsteuer laufendes Jahr
+3841	Umsatzsteuer Vorjahr
+3850	Aufgeschobene Einfuhr-Umsatzsteuer
+3851	Unrichtig oder unberechtigt ausgew. USt
+3900	Passive Rechnungsabgrenzung
+4135	Steuerfr. EG-Lief.v.Neufahrzg.ohne UStID
+4320	Im anderen EG-Land stpfl. Lieferungen
+4600	Unentgeltliche Wertabgaben
+4610	Entnahme Unternehmer (Waren) 7% USt
+4616	Entnahme Unternehmer (Waren) 7% USt
+4619	Entnahme Unternehmer (Waren) ohne USt
+4620	Entnahme Unternehmer (Waren) 16% USt
+4626	Entnahme Unternehmer (Waren) 16% USt
+44639	Verwendung von Gegenst.(Kfz) ohne USt
+4645	Verwendung von Gegenst. (Kfz) 16% USt
+4646	Verwendung von Gegenst. (Tel) 16% USt
+4650	Unentgeltl. Erbringung Leist. 7% USt
+4656	Unentgeltl. Erbringung Leist. 7% USt
+4659	Unentgeltl. Erbringung Leist. ohne USt
+4660	Unentgeltl. Erbringung Leist. 16% USt
+4666	Unentgeltl. Erbringung Leist. 16% USt
+4670	Unentgeltl. Zuwend. von Waren 7% USt
+4676	Unentgeltl. Zuwend. von Waren 7% USt
+4679	Unentgeltl. Zuwend. von Waren ohne USt
+4680	Unentgeltl. Zuwend. von Waren 16% USt
+4684	Unentgeltl. Zuwend. von Waren 16% USt
+4820	Andere aktivierte Eigenleistungen
+4852	Erl. Verkauf Finanzanl. 100/50% st.frei
+4858	Abgang Finanzanl. 100/50% st.frei RBW
+4980	Investitionszulage
+4982	Sonstige steuerfr. Betriebseinnahmen
+5000	Aufwendungen f. RHB und bezogene Waren
+5100	Einkauf Roh-,Hilfs- und Betriebsstoffe
+5190	Energiestoffe
+5200	Wareneingang
+5300	Wareneingang 7% Vorsteuer
+5400	Wareneingang 16% Vorsteuer
+5420	EG-Erwerb 7% Vorsteuer und 7% USt
+5425	EG-Erwerb 16% Vorsteuer 16% USt
+5430	EG-Erwerb ohne Vorsteuer und 7% USt
+5435	EG-Erwerb ohne Vorsteuer und 16% USt
+5440	EG-Erw. Nfz o.UStID 16% Vorsteuer/USt
+5500	Wareneingang 5% Vorsteuer
+5530	Wareneingang 9% Vorsteuer
+5540	Wareneingang 9% Vorsteuer
+5550	Steuerfreier EG-Erwerb
+5559	Steuerfreie Einfuhren
+5560	Waren aus USt-Lager 7% Vorsteuer, 7% USt
+5565	Waren aus USt-Lager 16% Vorst., 16% USt
+5580	Stat.Konto Wareneinkauf allg. USt-Satz
+5582	Stat.Konto Wareneinkauf ohne Vorsteuer
+5589	Gegenkto Aufteilung des Wareneinkaufs
+5600	Nicht abziehbare Vorsteuer
+5610	Nicht abziehbare Vorsteuer 7%
+5650	Nicht abziehbare Vorsteuer 16%
+5724	Nachl. a. EG-Erwerb 7% Vorsteuer/USt
+5725	Nachl. a. EG-Erwerb 16% Vorsteuer/USt
+5727	Nachl. a. EG-Erwerb 19% Vorsteuer/USt
+5730	Erhaltene Skonti
+5731	Erhaltene Skonti 7% Vorsteuer
+5735	Erhaltene Skonti 16% Vorsteuer
+5736	Erhaltene Skonti 19% Vorsteuer
+5740	Erhaltene Boni
+5750	Erhaltene Boni 7% Vorsteuer
+5760	Erhaltene Boni 16% Vorsteuer
+5764	Erhaltene Boni 19% Vorsteuer
+5770	Erhaltene Rabatte
+5780	Erhaltene Rabatte 7% Vorsteuer
+5790	Erhaltene Rabatte 16% Vorsteuer
+5794	Erhaltene Rabatte 19% Vorsteuer
+5800	Bezugsnebenkosten
+5820	Leergut
+5860	Verrechnete Stoffkosten
+5900	Fremdleistungen
+5915	Leistungen ausl. UN 7% Vorsteuer, 7% USt
+5925	Leistungen ausl. UN 16% Vorst., 16% USt
+5935	Leistungen ausl. UN ohne Vorst., 7% USt
+5945	Leistungen ausl. UN ohne Vorst., 16% USt
+6026	Tantiemen
+6045	Bedienungsgelder
+6050	Ehegattengehalt
+6060	Freiwillige soziale Aufwendung. LSt-pfl.
+6100	Soziale Abgaben, Altersversorgung
+6110	Gesetzliche Sozialaufwendungen
+6130	Freiwillige soziale Aufwendung. LSt-frei
+6150	Versorgungskassen
+6170	Sonstige soziale Abgaben
+6200	Abschreibung immaterielle VermG
+6210	Apl. Abschreibungen immaterielle VermG
+6220	Abschreibungen auf Sachanlagen
+6222	Abschreibungen auf Kfz
+6230	Apl. Abschreibungen auf Sachanlagen
+6240	Abschreib.Sachanlagen/stl. So-Vorschr.
+6250	Kaufleasing
+6260	Sofortabschreibung GWG
+6262	Abschreibungen auf aktivierte GWG
+6266	Apl. Abschreibungen auf aktivierte GWG
+6268	Abschreibungen Ingangsetzung/Erweit.
+6272	Abschreibungen auf UV, steuerr. bedingt
+6280	Forderungsverluste
+6281	Forderungsverluste 7% USt
+6285	Forderungsverluste 16% USt
+6287	Forderungsverluste 19% USt
+6300	Sonstige betriebliche Aufwendungen
+6303	Fremdleistungen und Fremdarbeiten
+6304	Sonstige betriebl.u.regelm.Aufwendungen
+6305	Raumkosten
+6310	Miete
+6315	Pacht
+6320	Heizung
+6325	Gas, Strom, Wasser
+6330	Reinigung
+6340	Abgaben betrieblich genutzt. Grundbesitz
+6345	Sonstige Raumkosten
+6348	Aufwendung. Arbeitszimmer, abz. Anteil
+6349	Aufwendung. Arbeitszimmer n.abz. Anteil
+6390	Zuwendungen,Spenden steuerl. n. abziehb.
+6391	Zuwendg.Spenden wissensch./kult. Zweck
+6393	Zuwendungen,Spenden kirchl./rel./gemein.
+6394	Zuwendungen,Spenden an politische Partei
+6397	Zuwendg. an Stiftg. kirchl./rel./gemein.
+6398	Zuwendg. an Stiftg. wiss./mildt./kultur.
+6400	Versicherungen
+6430	Sonstige Abgaben
+6440	Ausgleichsabgabe SchwerbehindertenG
+6450	Reparatur u.Instandhaltung von Bauten
+6458	Reparatur/Instandh. Bauten nicht im BV
+6460	Reparatur/Instandh. Anlagen u. Maschinen
+6470	Reparatur/Instandh. Betriebs- u. Gesch.
+6485	Reparatur/Instandh. andere Anlagen
+6490	Sonstige Reparaturen/Instandhaltung
+6498	Mietleasing
+6500	Fahrzeugkosten
+6520	Kfz-Versicherungen
+6530	Laufende Kfz-Betriebskosten
+6540	Kfz-Reparaturen
+6550	Garagenmieten
+6560	Leasingfahrzeugkosten
+6570	Sonstige Kfz-Kosten
+6590	Kfz-Kosten betriebl.Nutzung Kfz im PV
+6595	Fremdfahrzeugkosten
+6600	Werbekosten
+6625	Geschenke ausschl.betrieblich genutzt
+6640	Bewirtungskosten
+6641	Eingeschr. abziehb. BA, abz. Anteil
+6642	Eingeschr. abziehb. BA, n. abz. Anteil
+6643	Aufmerksamkeiten
+6650	Reisekosten Arbeitnehmer
+6663	Reisekosten Arbeitnehmer, Fahrtkosten
+6664	Reisekosten AN Verpfleg.mehraufwand
+6668	Kilometergelderstattung Arbeitnehmer
+6670	Reisekosten Unternehmer
+6673	Reisekosten Unternehmer, Fahrtkosten
+6674	Reisekosten UN Verpfleg.mehraufwand
+6688	Fahrten Wohnung/Arbeit, abzieh. Anteil
+6689	Fahrten Wohnung/Arbeit, n. abz. Anteil
+6700	Kosten Warenabgabe
+6710	Verpackungsmaterial
+6740	Ausgangsfrachten
+6760	Transportversicherungen
+6770	Verkaufsprovisionen
+6780	Fremdarbeiten (Vertrieb)
+6800	Porto
+6805	Telefon
+6810	Telefax und Internetkosten
+6821	Fortbildungskosten
+6822	Freiwillige Sozialleistungen
+6825	Rechts- und Beratungskosten
+6840	Mietleasing
+6850	Sonstiger Betriebsbedarf
+6855	Nebenkosten des Geldverkehrs
+6856	Aufwendg. Anteile KapGes 100/50% n.abz
+6859	Aufwand Abraum-/Abfallbeseitigung
+6860	Nicht abziehbare Vorsteuer
+6865	Nicht abziehbare Vorsteuer 7%
+6870	Nicht abziehbare Vorsteuer 16%
+6880	Aufwendungen aus Kursdifferenzen
+6883	Aufwendg. Bewertung Finanzmittelfonds
+6892	Erl. Verkauf Finanzanl. 100/50% n. abz.
+6898	Abgang Finanzanl. 100/50% n. abz. RBW
+6900	Verluste aus Anlagenabgang
+6906	Verluste aus Abgang UV 100/50% n. abz.
+6912	Abschreibungen auf UV, steuerr. bedingt
+6916	Aufwend. Zuschreibung  Verbindlichk.
+6920	Einstellung in die PWB zu Forderungen
+6923	Einstellung in die EWB zu Forderungen
+6926	Einstellungen SoPo Ansparabschreibungen
+6930	Forderungsverluste
+6931	Forderungsverluste 7% USt
+6932	Forder.verluste aus stfr. EG-Lieferungen
+6933	Forderungsverluste EG-Lieferungen 7%
+6934	Forderungsverl. EG-Lieferung 16% USt
+6935	Forderungsverluste 16% USt
+6937	Forderungsverluste 19% USt
+6939	Forderungsverluste EG-Lieferung 19% USt
+6960	Periodenfremde Aufwendungen
+6967	Sonst.Aufwendungen, betriebsfr.u.regelm.
+6970	Kalkulatorischer Unternehmerlohn
+6972	Kalkulatorische Miete und Pacht
+6974	Kalkulatorische Zinsen
+6976	Kalkulatorische Abschreibungen
+6978	Kalkulatorische Wagnisse
+6979	Kalkulatorischer Lohn, unentgeltl. AN
+6980	Verrechneter kalkul.Unternehmerlohn
+6982	Verrechnete kalkul. Miete und Pacht
+6984	Verrechnete kalkulatorische Zinsen
+6986	Verrechnete kalkul. Abschreibungen
+6988	Verrechnete kalkulatorische Wagnisse
+6989	Verrechneter kalk. Lohn, unentgeltl. AN
+6990	Herstellungskosten
+6992	Verwaltungskosten
+6994	Vertriebskosten
+6999	Gegenkonto zu 6990 bis 6998
+7007	Gewinne a. Anteilen inl. Kapitalgesells.
+7110	Sonstiger Zinsertrag
+7192	Gewinne auf Grund Gewinngemeinschaft
+7194	Gewinne auf Grund Gewinn/Teilgewinnabf
+7200	Abschreibungen auf Finanzanlagen
+7204	Abschreibg. Finanzanl. 100/50% n.abz.
+7210	Abschreibungen Wertpapiere des UV
+7214	Abschreibg. Wertpap.UV 100/50% n.abz.
+7250	Abschreib.Finanzanlagen/stl.So-Vorsch.
+7255	Abschreibg. Finanzanl. 100/50% n.abz.
+7310	Zinsaufwendungen f.kfr.Verbindlichkeit.
+7318	In Dauerschuldz. umqual.Zins. kfr.Verb.
+7319	Zinsaufwend. f.kfr. Verb.an verbund. UN
+7320	Zinsaufwendungen f.lfr.Verbindlichkeit.
+7340	Diskontaufwendungen
+7349	Diskontaufwendungen an verbundene UN
+7350	Zinsen, Aufwendung. 100/50% n. abzugsf.
+7351	Zinsen, Aufw. verb. UN 100/50% n.abzugsf
+7392	Abgef. Gewinne / Gewinngemeinschaft
+7394	Abgef. Gewinne / Gewinn-/Teilgewinnabf.
+7501	Ao. Aufwendungen finanzwirksam
+7550	Ao. Aufwendungen nicht finanzwirksam
+7610	Gewerbesteuer
+7632	Kapitalertragsteuer 20%
+7634	SolZ auf Kapitalertragsteuer 20%
+7635	Zinsabschlagsteuer
+7640	Steuernachzahlg. VJ Einkommen und Ertrag
+7650	Sonstige Steuern
+7675	Verbrauchsteuer
+7680	Grundsteuer
+7685	Kfz-Steuern
+7690	Steuernachzahlg. VJ sonstige Steuern
+7700	Gewinnvortrag nach Verwendung
+7710	Gewinnvortrag (steuerliches Einlagekto)
+7715	Gewinnvortrag 0% Vorbelastung EK02
+7720	Verlustvortrag nach Verwendung
+7795	Vortrag auf neue Rechnung (GuV)
+9060	Offene Posten 1990
+9069	Offene Posten 1999
+9070	Offene Posten 2000
+9071	Offene Posten 2001
+9072	Offene Posten 2002
+9073	Offene Posten 2003
+9074	Offene Posten 2004
+9075	Offene Posten 2005
+9090	Summenvortrag
+9091	Offene Posten 1991
+9092	Offene Posten 1992
+9093	Offene Posten 1993
+9094	Offene Posten 1994
+9095	Offene Posten 1995
+9096	Offene Posten 1996
+9097	Offene Posten 1997
+9098	Offene Posten 1998
+9101	Verkaufstage
+9102	Anzahl der Barkunden
+9104	Unbezahlte Personen
+9107	Verkaufsraum qm
+9116	Anzahl Rechnungen
+9117	Anzahl Kreditkunden monatlich
+9118	Anzahl Kreditkunden aufgelaufen
+9120	Erweiterungsinvestitionen
+9140	Auftragsbestand
+9190	Gegenkto. zu Konten 9101-9107, 9116-9118
+9199	Gegenkonto zu Konten 9120, 9135-9140
+9209	Gegenkonto zu 9200
+9219	Gegenkonto zu 9210
+9220	Gez. Kapital in DM (Art. 42/3/1 EGHGB)
+9221	Gez. Kapital Euro (Art. 42/3/2 EGHGB)
+9229	Gegenkonto zu Konten 9220-9221
+9232	Passive RAP Investitionszulagen
+9239	Gegenkonto zu Konten 9230-9238
+9240	Investitionsverbindlichk.b.Leistg.Verb.
+9241	Investitionsverbindlichk. Sachanlagen
+9242	Investitionsverbindlichk. immat. VG
+9243	Investitionsverbindlichk. Finanzanlagen
+9244	Gegenkonto zu Konten 9240 - 43
+9249	Gegenkonto zu Konten 9245 - 47
+9250	Eigenkapitalersetz. Gesellschafterdarl.
+9255	Ungesicherte Gesellschafterdarl. (g.5J)
+9259	Gegenkonto zu 9250 und 9255
+9269	Gegenkonto zu Konten 9260-9268
+9270	Gegenkonto zu Konten 9271-9279
+9277	Haftung fremde Verbindlichkeiten
+9278	Haftung fremde Verbindlichk.gg.verb.UN
+9280	Gegenkonto zu Konten 9281-9284
+9282	Verpflichtungen Leasing-/Mietvertr.v.UN
+9290	Statistisches Konto steuerfreie Auslagen
+9291	Gegenkonto zu 9290
+9292	Statistisches Konto Fremdgeld
+9293	Gegenkonto zu 9292
+9295	Einlagen stiller Gesellschafter
+9297	Steuerrechtlicher Ausgleichsposten
+9400	Privatentnahmen allgemein
+9410	Privatsteuern
+9413	Privatsteuern
+9414	Privatsteuern
+9415	Privatsteuern
+9417	Privatsteuern
+9440	Zuwendungen, Spenden
+9480	Unentgeltliche Wertabgaben
+9490	Privateinlagen
+9620	Tantieme
+9630	Darlehensverzinsung
+9690	Restanteil
+9720	Tantieme
+9730	Darlehensverzinsung
+9790	Restanteil
+9810	Gesellschafter-Darlehen
+9820	Verlust-/Vortragskonto
+9840	Gesellschafter-Darlehen
+9860	Einzahlungsverpfl. p. haft. Gesellsch.
+9870	Einzahlungsverpfl. Kommanditisten
+9880	Ausgleichsposten f. aktiv. eig. Anteile
+9882	Ausgleichsposten f. aktiv. Bilanz.hilfen
+9883	Ungedeckte Entnahme p. haft. Gesellsch.
+9884	Ungedeckte Entnahme Kommanditisten
+9885	Verr.kto ungedeckte Entnahme p.haft.Ges.
+9886	Verr.kto ungedeckte Entnahme Kommandit.
+9887	Steueraufwand der Gesellschafter
+9889	Gegenkonto zu 9887
+9893	Umsatzsteuer in Forderungen allg. Satz
+9895	Gegenkonto Aufteilung Umsatzsteuer
+9896	Vorsteuer in Verbindl. allgem. Satz
+9899	Gegenkonto Aufteilung Vorsteuer
+\.
+
+
+--
+-- Data for Name: phpa_expenditures; Type: TABLE DATA; Schema: public; Owner: burkhard
+--
+
+COPY phpa_expenditures (number, pfile, createdate, expendituretype, exp_category, description, amount, vatamount) FROM stdin;
+\.
+
+
+--
+-- Data for Name: phpa_expendituretypes; Type: TABLE DATA; Schema: public; Owner: burkhard
+--
+
+COPY phpa_expendituretypes (number, description, category, vat, vat_category) FROM stdin;
+1	Auslagen	1370	0.0	0
+2	Fremdgeld	1374	0.0	0
+3	Gebuehren	1200	19.0	3806
+4	Gebuehren	1200	16.0	3805
+\.
+
+
+--
+-- Data for Name: phpa_invoicepos; Type: TABLE DATA; Schema: public; Owner: burkhard
+--
+
+COPY phpa_invoicepos (number, invoice, invoicetype, chargefactor, amount, vat) FROM stdin;
+\.
+
+
+--
+-- Data for Name: phpa_invoices; Type: TABLE DATA; Schema: public; Owner: burkhard
+--
+
+COPY phpa_invoices (number, pfile, address, pfilevalue, charge, invoicetext, createdate, paydate) FROM stdin;
+\.
+
+
+--
+-- Data for Name: phpa_invoicetypes; Type: TABLE DATA; Schema: public; Owner: burkhard
+--
+
+COPY phpa_invoicetypes (number, description, charge, amount_category, vat_percent, vat_category) FROM stdin;
+1	Honorar	\N	1200	19.00	3806
+2	Prozessgebuehr/Gebuehr fuer Mahnbescheid	\N	1370	0.00	0
+3	Erhoehungsgebuehr	\N	1200	19.00	3806
+4	Verhandlungsgebuehr/Gebuehr fuer Vollstreckungsbescheid	\N	1370	0.00	0
+5	Verhandlungsgebuehr, nichtstreitig	\N	1370	0.00	0
+6	Verhandlungsgebuehr bei Einspruch	\N	1370	0.00	0
+7	Eroerterungsgebuehr	\N	1370	0.00	0
+8	Beweisgebuehr	\N	1200	19.00	3806
+9	Vergleichsgebuehr	\N	1370	0.00	0
+10	Zwangsvollstreckungsgebuehr	\N	1370	0.00	0
+11	Gebuehr fuer eidesstattliche Versicherung	\N	1370	0.00	0
+12	Tage- und Abwesenheitsgeld	\N	1200	19.00	3806
+13	Schreibauslagen - Fotokopien	\N	1200	19.00	3806
+14	Porto, Telefon-, Telefax und BTX-Auslagen -Pauschale-	\N	1200	19.00	3809
+\.
+
+
+--
+-- Data for Name: phpa_partner; Type: TABLE DATA; Schema: public; Owner: burkhard
+--
+
+COPY phpa_partner (number, type, title, name, prename, organization, street, zip, city, phone, fax, email) FROM stdin;
+1	Person	Herr	Duck	Donald	Universitaet Entenhausen	\N	\N	\N	\N	\N	\N
+2	Person	Herr	Mustermann	Manfred	\N	\N	\N	\N	\N	\N	\N
+3	Gericht	\N	LG Entenhausen	\N	Landgericht Entenhausen	\N	\N	\N	\N	\N	\N
+\.
+
+
+--
+-- Data for Name: phpa_partnertypes; Type: TABLE DATA; Schema: public; Owner: burkhard
+--
+
+COPY phpa_partnertypes (type) FROM stdin;
+Person
+Firma
+Gericht
+\.
+
+
+--
+-- Data for Name: phpa_pfiles; Type: TABLE DATA; Schema: public; Owner: burkhard
+--
+
+COPY phpa_pfiles (number, processregister, value, subject, partner, opposing, court, createdate, enddate, comment) FROM stdin;
+1	2005-001  	\N	Duck ./. Land NRW	1	\N	3	2005-01-01	\N	\N
+2	2004-001  	\N	Mustermann ./. Mustermann	2	\N	\N	2004-01-11	\N	\N
+\.
+
+
+--
+-- Data for Name: phpa_rvgcharges; Type: TABLE DATA; Schema: public; Owner: burkhard
+--
+
+COPY phpa_rvgcharges (rvgvalue, rvgcharge) FROM stdin;
+300.00	25.00
+600.00	45.00
+900.00	65.00
+1200.00	85.00
+1500.00	105.00
+2000.00	133.00
+2500.00	161.00
+3000.00	189.00
+3500.00	217.00
+4000.00	245.00
+4500.00	273.00
+5000.00	301.00
+6000.00	338.00
+7000.00	375.00
+8000.00	412.00
+9000.00	449.00
+10000.00	486.00
+13000.00	526.00
+16000.00	566.00
+19000.00	606.00
+22000.00	646.00
+25000.00	686.00
+30000.00	758.00
+35000.00	830.00
+40000.00	902.00
+45000.00	974.00
+50000.00	1046.00
+65000.00	1123.00
+80000.00	1200.00
+95000.00	1277.00
+110000.00	1354.00
+125000.00	1431.00
+140000.00	1508.00
+155000.00	1585.00
+170000.00	1662.00
+185000.00	1739.00
+200000.00	1816.00
+230000.00	1934.00
+260000.00	2052.00
+290000.00	2170.00
+320000.00	2288.00
+350000.00	2406.00
+380000.00	2524.00
+410000.00	2642.00
+440000.00	2760.00
+470000.00	2878.00
+500000.00	2996.00
+\.
+
+
+--
+-- Data for Name: phpa_transactions; Type: TABLE DATA; Schema: public; Owner: burkhard
+--
+
+COPY phpa_transactions (number) FROM stdin;
+\.
+
+
+--
+-- Name: pri_phpa_amounts; Type: CONSTRAINT; Schema: public; Owner: burkhard; Tablespace: 
+--
+
+ALTER TABLE ONLY phpa_amounts
+    ADD CONSTRAINT pri_phpa_amounts PRIMARY KEY (number);
+
+
+--
+-- Name: pri_phpa_categories; Type: CONSTRAINT; Schema: public; Owner: burkhard; Tablespace: 
+--
+
+ALTER TABLE ONLY phpa_exp_categories
+    ADD CONSTRAINT pri_phpa_categories PRIMARY KEY (number);
+
+
+--
+-- Name: pri_phpa_config; Type: CONSTRAINT; Schema: public; Owner: burkhard; Tablespace: 
+--
+
+ALTER TABLE ONLY phpa_config
+    ADD CONSTRAINT pri_phpa_config PRIMARY KEY (number);
+
+
+--
+-- Name: pri_phpa_events; Type: CONSTRAINT; Schema: public; Owner: burkhard; Tablespace: 
+--
+
+ALTER TABLE ONLY phpa_events
+    ADD CONSTRAINT pri_phpa_events PRIMARY KEY (number);
+
+
+--
+-- Name: pri_phpa_expenditures; Type: CONSTRAINT; Schema: public; Owner: burkhard; Tablespace: 
+--
+
+ALTER TABLE ONLY phpa_expenditures
+    ADD CONSTRAINT pri_phpa_expenditures PRIMARY KEY (number);
+
+
+--
+-- Name: pri_phpa_invoices; Type: CONSTRAINT; Schema: public; Owner: burkhard; Tablespace: 
+--
+
+ALTER TABLE ONLY phpa_invoices
+    ADD CONSTRAINT pri_phpa_invoices PRIMARY KEY (number);
+
+
+--
+-- Name: pri_phpa_invoicespos; Type: CONSTRAINT; Schema: public; Owner: burkhard; Tablespace: 
+--
+
+ALTER TABLE ONLY phpa_invoicepos
+    ADD CONSTRAINT pri_phpa_invoicespos PRIMARY KEY (number);
+
+
+--
+-- Name: pri_phpa_invoicetypes; Type: CONSTRAINT; Schema: public; Owner: burkhard; Tablespace: 
+--
+
+ALTER TABLE ONLY phpa_invoicetypes
+    ADD CONSTRAINT pri_phpa_invoicetypes PRIMARY KEY (number);
+
+
+--
+-- Name: pri_phpa_partner; Type: CONSTRAINT; Schema: public; Owner: burkhard; Tablespace: 
+--
+
+ALTER TABLE ONLY phpa_partner
+    ADD CONSTRAINT pri_phpa_partner PRIMARY KEY (number);
+
+
+--
+-- Name: pri_phpa_pfiles; Type: CONSTRAINT; Schema: public; Owner: burkhard; Tablespace: 
+--
+
+ALTER TABLE ONLY phpa_pfiles
+    ADD CONSTRAINT pri_phpa_pfiles PRIMARY KEY (number);
+
+
+--
+-- Name: pri_transactions; Type: CONSTRAINT; Schema: public; Owner: burkhard; Tablespace: 
+--
+
+ALTER TABLE ONLY phpa_transactions
+    ADD CONSTRAINT pri_transactions PRIMARY KEY (number);
+
+
+--
+-- Name: phpa_events_pfile_fkey; Type: FK CONSTRAINT; Schema: public; Owner: burkhard
+--
+
+ALTER TABLE ONLY phpa_events
+    ADD CONSTRAINT phpa_events_pfile_fkey FOREIGN KEY (pfile) REFERENCES phpa_pfiles(number) ON DELETE CASCADE;
+
+
+--
+-- Name: phpa_expenditures_pfile_fkey; Type: FK CONSTRAINT; Schema: public; Owner: burkhard
+--
+
+ALTER TABLE ONLY phpa_expenditures
+    ADD CONSTRAINT phpa_expenditures_pfile_fkey FOREIGN KEY (pfile) REFERENCES phpa_pfiles(number) ON DELETE CASCADE;
+
+
+--
+-- Name: phpa_invoicepos_invoice_fkey; Type: FK CONSTRAINT; Schema: public; Owner: burkhard
+--
+
+ALTER TABLE ONLY phpa_invoicepos
+    ADD CONSTRAINT phpa_invoicepos_invoice_fkey FOREIGN KEY (invoice) REFERENCES phpa_invoices(number) ON DELETE CASCADE;
+
+
+--
+-- Name: phpa_invoicepos_invoicetype_fkey; Type: FK CONSTRAINT; Schema: public; Owner: burkhard
+--
+
+ALTER TABLE ONLY phpa_invoicepos
+    ADD CONSTRAINT phpa_invoicepos_invoicetype_fkey FOREIGN KEY (invoicetype) REFERENCES phpa_invoicetypes(number) ON DELETE CASCADE;
+
+
+--
+-- Name: phpa_invoices_pfile_fkey; Type: FK CONSTRAINT; Schema: public; Owner: burkhard
+--
+
+ALTER TABLE ONLY phpa_invoices
+    ADD CONSTRAINT phpa_invoices_pfile_fkey FOREIGN KEY (pfile) REFERENCES phpa_pfiles(number) ON DELETE CASCADE;
+
+
+--
+-- Name: public; Type: ACL; Schema: -; Owner: postgres
+--
+
+REVOKE ALL ON SCHEMA public FROM PUBLIC;
+REVOKE ALL ON SCHEMA public FROM postgres;
+GRANT ALL ON SCHEMA public TO postgres;
+GRANT ALL ON SCHEMA public TO PUBLIC;
+
+
+--
+-- Name: phpa_accounts; Type: ACL; Schema: public; Owner: burkhard
+--
+
+REVOKE ALL ON TABLE phpa_accounts FROM PUBLIC;
+REVOKE ALL ON TABLE phpa_accounts FROM burkhard;
+GRANT ALL ON TABLE phpa_accounts TO burkhard;
+GRANT ALL ON TABLE phpa_accounts TO PUBLIC;
+
+
+--
+-- Name: phpa_accounts_number_seq; Type: ACL; Schema: public; Owner: burkhard
+--
+
+REVOKE ALL ON SEQUENCE phpa_accounts_number_seq FROM PUBLIC;
+REVOKE ALL ON SEQUENCE phpa_accounts_number_seq FROM burkhard;
+GRANT ALL ON SEQUENCE phpa_accounts_number_seq TO burkhard;
+GRANT ALL ON SEQUENCE phpa_accounts_number_seq TO PUBLIC;
+
+
+--
+-- Name: phpa_amounts; Type: ACL; Schema: public; Owner: burkhard
+--
+
+REVOKE ALL ON TABLE phpa_amounts FROM PUBLIC;
+REVOKE ALL ON TABLE phpa_amounts FROM burkhard;
+GRANT ALL ON TABLE phpa_amounts TO burkhard;
+GRANT ALL ON TABLE phpa_amounts TO PUBLIC;
+
+
+--
+-- Name: phpa_amounts_number_seq; Type: ACL; Schema: public; Owner: burkhard
+--
+
+REVOKE ALL ON SEQUENCE phpa_amounts_number_seq FROM PUBLIC;
+REVOKE ALL ON SEQUENCE phpa_amounts_number_seq FROM burkhard;
+GRANT ALL ON SEQUENCE phpa_amounts_number_seq TO burkhard;
+GRANT ALL ON SEQUENCE phpa_amounts_number_seq TO PUBLIC;
+
+
+--
+-- Name: phpa_config; Type: ACL; Schema: public; Owner: burkhard
+--
+
+REVOKE ALL ON TABLE phpa_config FROM PUBLIC;
+REVOKE ALL ON TABLE phpa_config FROM burkhard;
+GRANT ALL ON TABLE phpa_config TO burkhard;
+GRANT ALL ON TABLE phpa_config TO PUBLIC;
+
+
+--
+-- Name: phpa_config_number_seq; Type: ACL; Schema: public; Owner: burkhard
+--
+
+REVOKE ALL ON SEQUENCE phpa_config_number_seq FROM PUBLIC;
+REVOKE ALL ON SEQUENCE phpa_config_number_seq FROM burkhard;
+GRANT ALL ON SEQUENCE phpa_config_number_seq TO burkhard;
+GRANT ALL ON SEQUENCE phpa_config_number_seq TO PUBLIC;
+
+
+--
+-- Name: phpa_events; Type: ACL; Schema: public; Owner: burkhard
+--
+
+REVOKE ALL ON TABLE phpa_events FROM PUBLIC;
+REVOKE ALL ON TABLE phpa_events FROM burkhard;
+GRANT ALL ON TABLE phpa_events TO burkhard;
+GRANT ALL ON TABLE phpa_events TO PUBLIC;
+
+
+--
+-- Name: phpa_events_number_seq; Type: ACL; Schema: public; Owner: burkhard
+--
+
+REVOKE ALL ON SEQUENCE phpa_events_number_seq FROM PUBLIC;
+REVOKE ALL ON SEQUENCE phpa_events_number_seq FROM burkhard;
+GRANT ALL ON SEQUENCE phpa_events_number_seq TO burkhard;
+GRANT ALL ON SEQUENCE phpa_events_number_seq TO PUBLIC;
+
+
+--
+-- Name: phpa_exp_categories; Type: ACL; Schema: public; Owner: burkhard
+--
+
+REVOKE ALL ON TABLE phpa_exp_categories FROM PUBLIC;
+REVOKE ALL ON TABLE phpa_exp_categories FROM burkhard;
+GRANT ALL ON TABLE phpa_exp_categories TO burkhard;
+GRANT ALL ON TABLE phpa_exp_categories TO PUBLIC;
+
+
+--
+-- Name: phpa_expenditures; Type: ACL; Schema: public; Owner: burkhard
+--
+
+REVOKE ALL ON TABLE phpa_expenditures FROM PUBLIC;
+REVOKE ALL ON TABLE phpa_expenditures FROM burkhard;
+GRANT ALL ON TABLE phpa_expenditures TO burkhard;
+GRANT ALL ON TABLE phpa_expenditures TO PUBLIC;
+
+
+--
+-- Name: phpa_expenditures_number_seq; Type: ACL; Schema: public; Owner: burkhard
+--
+
+REVOKE ALL ON SEQUENCE phpa_expenditures_number_seq FROM PUBLIC;
+REVOKE ALL ON SEQUENCE phpa_expenditures_number_seq FROM burkhard;
+GRANT ALL ON SEQUENCE phpa_expenditures_number_seq TO burkhard;
+GRANT ALL ON SEQUENCE phpa_expenditures_number_seq TO PUBLIC;
+
+
+--
+-- Name: phpa_expendituretypes; Type: ACL; Schema: public; Owner: burkhard
+--
+
+REVOKE ALL ON TABLE phpa_expendituretypes FROM PUBLIC;
+REVOKE ALL ON TABLE phpa_expendituretypes FROM burkhard;
+GRANT ALL ON TABLE phpa_expendituretypes TO burkhard;
+GRANT ALL ON TABLE phpa_expendituretypes TO PUBLIC;
+
+
+--
+-- Name: phpa_invoicepos; Type: ACL; Schema: public; Owner: burkhard
+--
+
+REVOKE ALL ON TABLE phpa_invoicepos FROM PUBLIC;
+REVOKE ALL ON TABLE phpa_invoicepos FROM burkhard;
+GRANT ALL ON TABLE phpa_invoicepos TO burkhard;
+GRANT ALL ON TABLE phpa_invoicepos TO PUBLIC;
+
+
+--
+-- Name: phpa_invoicepos_number_seq; Type: ACL; Schema: public; Owner: burkhard
+--
+
+REVOKE ALL ON SEQUENCE phpa_invoicepos_number_seq FROM PUBLIC;
+REVOKE ALL ON SEQUENCE phpa_invoicepos_number_seq FROM burkhard;
+GRANT ALL ON SEQUENCE phpa_invoicepos_number_seq TO burkhard;
+GRANT ALL ON SEQUENCE phpa_invoicepos_number_seq TO PUBLIC;
+
+
+--
+-- Name: phpa_invoices; Type: ACL; Schema: public; Owner: burkhard
+--
+
+REVOKE ALL ON TABLE phpa_invoices FROM PUBLIC;
+REVOKE ALL ON TABLE phpa_invoices FROM burkhard;
+GRANT ALL ON TABLE phpa_invoices TO burkhard;
+GRANT ALL ON TABLE phpa_invoices TO PUBLIC;
+
+
+--
+-- Name: phpa_invoices_number_seq; Type: ACL; Schema: public; Owner: burkhard
+--
+
+REVOKE ALL ON SEQUENCE phpa_invoices_number_seq FROM PUBLIC;
+REVOKE ALL ON SEQUENCE phpa_invoices_number_seq FROM burkhard;
+GRANT ALL ON SEQUENCE phpa_invoices_number_seq TO burkhard;
+GRANT ALL ON SEQUENCE phpa_invoices_number_seq TO PUBLIC;
+
+
+--
+-- Name: phpa_invoicetypes; Type: ACL; Schema: public; Owner: burkhard
+--
+
+REVOKE ALL ON TABLE phpa_invoicetypes FROM PUBLIC;
+REVOKE ALL ON TABLE phpa_invoicetypes FROM burkhard;
+GRANT ALL ON TABLE phpa_invoicetypes TO burkhard;
+GRANT ALL ON TABLE phpa_invoicetypes TO PUBLIC;
+
+
+--
+-- Name: phpa_invoicetypes_number_seq; Type: ACL; Schema: public; Owner: burkhard
+--
+
+REVOKE ALL ON SEQUENCE phpa_invoicetypes_number_seq FROM PUBLIC;
+REVOKE ALL ON SEQUENCE phpa_invoicetypes_number_seq FROM burkhard;
+GRANT ALL ON SEQUENCE phpa_invoicetypes_number_seq TO burkhard;
+GRANT ALL ON SEQUENCE phpa_invoicetypes_number_seq TO PUBLIC;
+
+
+--
+-- Name: phpa_partner; Type: ACL; Schema: public; Owner: burkhard
+--
+
+REVOKE ALL ON TABLE phpa_partner FROM PUBLIC;
+REVOKE ALL ON TABLE phpa_partner FROM burkhard;
+GRANT ALL ON TABLE phpa_partner TO burkhard;
+GRANT ALL ON TABLE phpa_partner TO PUBLIC;
+
+
+--
+-- Name: phpa_partner_number_seq; Type: ACL; Schema: public; Owner: burkhard
+--
+
+REVOKE ALL ON SEQUENCE phpa_partner_number_seq FROM PUBLIC;
+REVOKE ALL ON SEQUENCE phpa_partner_number_seq FROM burkhard;
+GRANT ALL ON SEQUENCE phpa_partner_number_seq TO burkhard;
+GRANT ALL ON SEQUENCE phpa_partner_number_seq TO PUBLIC;
+
+
+--
+-- Name: phpa_partnertypes; Type: ACL; Schema: public; Owner: burkhard
+--
+
+REVOKE ALL ON TABLE phpa_partnertypes FROM PUBLIC;
+REVOKE ALL ON TABLE phpa_partnertypes FROM burkhard;
+GRANT ALL ON TABLE phpa_partnertypes TO burkhard;
+GRANT ALL ON TABLE phpa_partnertypes TO PUBLIC;
+
+
+--
+-- Name: phpa_pfiles; Type: ACL; Schema: public; Owner: burkhard
+--
+
+REVOKE ALL ON TABLE phpa_pfiles FROM PUBLIC;
+REVOKE ALL ON TABLE phpa_pfiles FROM burkhard;
+GRANT ALL ON TABLE phpa_pfiles TO burkhard;
+GRANT ALL ON TABLE phpa_pfiles TO PUBLIC;
+
+
+--
+-- Name: phpa_pfiles_number_seq; Type: ACL; Schema: public; Owner: burkhard
+--
+
+REVOKE ALL ON SEQUENCE phpa_pfiles_number_seq FROM PUBLIC;
+REVOKE ALL ON SEQUENCE phpa_pfiles_number_seq FROM burkhard;
+GRANT ALL ON SEQUENCE phpa_pfiles_number_seq TO burkhard;
+GRANT ALL ON SEQUENCE phpa_pfiles_number_seq TO PUBLIC;
+
+
+--
+-- Name: phpa_rvgcharges; Type: ACL; Schema: public; Owner: burkhard
+--
+
+REVOKE ALL ON TABLE phpa_rvgcharges FROM PUBLIC;
+REVOKE ALL ON TABLE phpa_rvgcharges FROM burkhard;
+GRANT ALL ON TABLE phpa_rvgcharges TO burkhard;
+GRANT ALL ON TABLE phpa_rvgcharges TO PUBLIC;
+
+
+--
+-- Name: phpa_transactions; Type: ACL; Schema: public; Owner: burkhard
+--
+
+REVOKE ALL ON TABLE phpa_transactions FROM PUBLIC;
+REVOKE ALL ON TABLE phpa_transactions FROM burkhard;
+GRANT ALL ON TABLE phpa_transactions TO burkhard;
+GRANT ALL ON TABLE phpa_transactions TO PUBLIC;
+
+
+--
+-- PostgreSQL database dump complete
+--
+

@@ -1,0 +1,124 @@
+       Welcome to PHPAdvocat
+       ---------------------
+Since I could'd find any free software to manage a lawyer's office
+I decided to write it on my own. Inspired by PHPgroupware I tried to make it 
+OS independend, though my favorite OS is Linux. 
+I developed (and I am still developing) it on an AMD64 machine running 
+Debian-AMD64 sarge with Apache2 and PHP5. For Database I choose PostgreSQL 
+for its reliability and support of referential integrity. I also made a module 
+to support Informix and MySQL but I couldn't test the Informix part yet.
+
+In this project included are parts from 
+   calendrier.php by Mathieu LESNIAK 
+and
+    fpdf by Olivier PLATHEY
+Please refer to their Licence
+
+PHPAdvocat ist still in an alpha statium so don't expect too much. I would be
+glad of all help (suggestions, programms) I can get. Contact me on 
+    phpadvocat@obergoeker.de 
+
+For PHPAdvocat is distributed under GNU GPL you are free to copy an use it. 
+But I can take no responsibility of the behaviour of this program or any 
+effects which may occur.
+
+INSTALL
+-------
+To install PHPAdvocat simply extract phpadvocat-x.x-x.tar.gz in your favorite 
+Web-directory.
+change into the sql subdirectory and create the desired database.
+
+POSTGRESQL
+----------
+Then create a database "phpadvocat" and import the file pg-createdb.sql:
+
+$createdb -E LATIN9  phpadvocat
+CREATE DATABASE
+
+If this leads to an error, your locale seems not to be set to an
+appropriate value. In spite of setting your workspace you may create
+your database with UTF8 ans importing the LATIN9 files in the folowing way:
+
+$createdb  phpadvocat
+CREATE DATABASE
+
+$psql phpadvocat 
+phpadvocat=# SET client_encoding = 'LATIN9';
+SET
+
+phpadvocat=# \i pg-createdb.sql
+psql:pg-createdb.sql:17: NOTICE:  CREATE TABLE will create implicit sequence 'partner_number_seq' for SERIAL column 'partner.number'
+psql:pg-createdb.sql:17: NOTICE:  CREATE TABLE/PRIMARY KEY will create implicit index 'pri_clients' for table 'partner'
+
+...
+
+Some mandatory data has to be addes by the scripts "mandatory.sql" and "kontenrahmen.sql". 
+So, still logged into the phpadvocat database you may start this commands:
+
+phpadvocat=# \i mandatory.sql
+phpadvocat=# \i kontenrahmen-2007.sql
+
+And for some demo data add the contents in "demo.sql"
+
+phpadvocat=# \i demo.sql
+
+
+
+
+MYSQL
+-----
+Create a database "phpadvocat" and import the file my-createdb.sql:
+
+mysql -u root mysql
+...
+
+mysql> create database phpadvocat;
+...
+mysql> use phpadvocat
+Database changed
+
+mysql> \. my-createdb.sql
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+.....
+
+And:
+
+mysql> \. mandatory.sql
+mysql> \. kontenrahmen-2007.sql
+mysql> \. demo.sql
+
+
+NOTICE: 
+-------
+PHPAdvocat identifies users by the underlying database, so create a 
+PostgeSQL or MySQL user with sufficient rights to be able log in.
+
+To use the Database have a look at ./include/phpadvocat.inc.php and set
+correct $DBSERVER variable to [POSTGRESQL|MYSQL]
+
+In order to use the LaTeX Document generation function correcktly, be
+sure to have the texlive packets and the texlive extra utils (including
+pdflatex).
+
+Have Fun
+
+
+DISCLAIMER
+----------
+ Written by Burkhard Obergöker
+
+This document is Copyright © 2005 Free Software Foundation Inc. Permission is 
+granted to copy, distribute and/or modify this document under the terms of the
+GNU Free Documentation License, Version 1.1 or any later version published by
+the Free Software Foundation. A copy of the license is available at 
+http://www.gnu.org/copyleft/fdl.html.
+
+While this document does provide some recommendations on security, it is not 
+meant to totally prevent an attack, only to help you manage the risk involved. 
+Preventing an attack is solely up to the site administrator.
+
+There is no guarantee that following this will get you a working PHPAdvocat, 
+every system is a little different and I cannot cover all cases. 
